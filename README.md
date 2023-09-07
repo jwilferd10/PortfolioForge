@@ -15,7 +15,17 @@
 Coming Soon!
 
 ## :wave: Description: 
-Coming Soon!
+### :hammer_and_pick: PortfolioForge (Some line here)
+PortfolioForge is a versatile and user-friendly portfolio generator designed to empower developers and professionals to effortlessly showcase their skills, talents, and accomplishments.
+
+### :star: Features:
+- Interactive Portfolio Creation: Powered by Inquirer, users are guided through the portfolio creation process with multiple questions.
+- Customization: Tailor your portfolio to highlight your projects and showcase your unique strengths and experiences.
+- Ready-to-Use Web Profile: Generate a web profile ready for immediate use.
+- Developer-Friendly Baseline: Use it as a foundation for further development and customization.
+
+### 💭 Developer Notes
+PortfolioForge was a fun, exciting, and an educational project to work on. This was the project where I first learned and utilized concepts such as Node.js, NPM, and subsequently Inquirer. It allowed me to gain hands-on experience with modern development tools and practices, making it a valuable learning journey.
 
 ## :book: User Story:
 Coming Soon!
