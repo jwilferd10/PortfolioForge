@@ -15,7 +15,7 @@
 Coming Soon!
 
 ## :wave: Description: 
-### :hammer_and_pick: PortfolioForge (Some line here)
+### :hammer_and_pick: PortfolioForge: Where Ideas Become Portfolios, and Portfolios Become Opportunities
 PortfolioForge is a versatile and user-friendly portfolio generator designed to empower developers and professionals to effortlessly showcase their skills, talents, and accomplishments.
 
 ### :star: Features:
