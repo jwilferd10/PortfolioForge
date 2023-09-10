@@ -27,6 +27,18 @@ const generateSkillsPage = skillsText => {
 };
 
 // Programming Languages
+const generateLanguageSpread = languageSpread => {
+  if (!languageSpread) {
+    return '';
+  }
+
+  return `
+    <section class="my-3" id="programmingLanguages">
+      <h3 class="text-dark bg-primary p2 display-inline-block">Programming Languages</h3>
+      <p>${languageSpread.join(', ')}</p>
+    </section>
+  `;
+};
 
 // Generate the HTML containing project data
 const generateProjects = projectsArr => {
@@ -69,7 +81,7 @@ const generateProjects = projectsArr => {
 // Export function to generate entire page
 export const generatePage = (templateData) => {
   // Destructure page data by section
-  const { projects, about, skills, ...header } = templateData;
+  const { projects, about, skills, codingLanguages, ...header } = templateData;
 
   return `
     <!DOCTYPE html>
@@ -97,6 +109,7 @@ export const generatePage = (templateData) => {
       <main class="container my-5">
         ${generateAbout(about)}
         ${generateSkillsPage(skills)}
+        ${generateLanguageSpread(codingLanguages)}
         ${generateProjects(projects)}
       </main>
 
