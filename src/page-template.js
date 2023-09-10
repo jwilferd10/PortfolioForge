@@ -28,7 +28,7 @@ const generateSkillsPage = skillsText => {
 
 // Programming Languages
 const generateLanguageSpread = languageSpread => {
-  // Return an empty string if there are no languages
+  // Return an empty string if there are no languages provided or the array is empty
   if (!languageSpread || languageSpread.length === 0) {
     return '';
   }

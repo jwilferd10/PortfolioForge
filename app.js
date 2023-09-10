@@ -97,12 +97,76 @@ const promptUser = () => {
       message: 'What languages would you like to include?',
       choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node.js', 'Python', 'Java', 'Ruby', 'C++', 'PHP', 'Swift', 'TypeScript', 'Go', 'Rust', 'Kotlin', 'SQL', 'Perl', 'C#', 'Dart', 'Scala', 'Haskell', 'Objective-C', 'Lua'],
       when: ({ confirmLanguages }) => confirmLanguages
+    },
+    // Prompt user to include any information about their education
+    {
+      type: 'confirm',
+      name: 'confirmEducation',
+      message: "Do you have any Education and Certification achievements you'd like to feature?",
+      default: true,
+      validate: ({ confirmEducation }) => {
+        if (confirmEducation) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    },
+  ]).then(userResponses => {
+    // Check if user wants to include Education/Certifications
+    if (userResponses.confirmEducation) {
+      // Call promptEducation and pass portfolioData
+      return promptEducation(userResponses).then(educationData => ({
+        ...userResponses,
+        educationData
+      }));
     }
-  ]);
+    return userResponses;
+  })
+};
+
+// Function to prompt user about Education and Certification achievements
+const promptEducation = portfolioData => {
+  if (!portfolioData.education) {
+    portfolioData.education = [];
+  }
+
+    console.log(`
+    ==============================================
+    Enter Education and Certification achievements
+    ==============================================
+  `);
+
+  return inquirer.prompt([
+    // Name of Education and Certification
+    {
+      type: 'input',
+      name: 'achievementName',
+      message: 'What name can you provide? (Required)',
+      validate: achievementNameInput => {
+        if (achievementNameInput) {
+          return true;
+        } else {
+          console.log('Please enter a name or title!');
+          return false;
+        }
+      }
+    },
+    // Achievement Description
+    {
+      type: 'input',
+      name: 'achievementDescription',
+      message: 'Provide a description of your achievements (Required)'
+    }, 
+  ]).then((educationData) => {
+    portfolioData.education.push(educationData);
+    // Return the updated portfolioData
+    return portfolioData;
+  });
 };
 
 // Function to prompt the user for project information
-const promptProject = portfolioData => {
+const promptProject = (portfolioData) => {
   if (!portfolioData.projects) {
     portfolioData.projects = [];
   } 
