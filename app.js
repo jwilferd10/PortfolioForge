@@ -48,6 +48,45 @@ const promptUser = () => {
       name: 'about',
       message: 'Provide some information about yourself:',
       when: ({ confirmAbout }) => confirmAbout
+    },
+    {
+      type: 'confirm',
+      name: 'confirmSkills',
+      message: 'Would you like to provide some information highlighting your skills?',
+      default: true,
+      validate: ({ confirmSkills }) => {
+        if (confirmSkills) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'skills',
+      message: 'Provide some details about your skillset:',
+      when: ({ confirmSkills }) => confirmSkills
+    },
+    {
+      type: 'confirm', 
+      name: 'confirmLanguages',
+      message: 'Would you like to highlight any programming languages?',
+      default: true,
+      validate: ({ confirmLanguages }) => {
+        if (confirmLanguages) {
+          return true;
+        } else { 
+          return false;
+        }
+      }
+    },
+    {
+      type: 'checkbox',
+      name: 'programLanguages',
+      message: 'What languages would you like to include?',
+      choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node.js', 'Python', 'Java', 'Ruby', 'C++', 'PHP', 'Swift', 'TypeScript', 'Go', 'Rust', 'Kotlin', 'SQL', 'Perl', 'C#', 'Dart', 'Scala', 'Haskell', 'Objective-C', 'Lua'],
+      when: ({ confirmLanguages }) => confirmLanguages
     }
   ]);
 };
