@@ -133,7 +133,7 @@ const promptEducation = portfolioData => {
 
     console.log(`
     ==============================================
-    Enter Education and Certification achievements
+    Enter Education and Certification Achievements
     ==============================================
   `);
 
