@@ -83,7 +83,7 @@ const promptUser = () => {
     },
     {
       type: 'checkbox',
-      name: 'programLanguages',
+      name: 'codingLanguages',
       message: 'What languages would you like to include?',
       choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node.js', 'Python', 'Java', 'Ruby', 'C++', 'PHP', 'Swift', 'TypeScript', 'Go', 'Rust', 'Kotlin', 'SQL', 'Perl', 'C#', 'Dart', 'Scala', 'Haskell', 'Objective-C', 'Lua'],
       when: ({ confirmLanguages }) => confirmLanguages
