@@ -12,6 +12,22 @@ const generateAbout = aboutText => {
   `;
 };
 
+// User Skills Section
+const generateSkillsPage = skillsText => {
+  if (!skillsText) {
+    return '';
+  }
+
+  return `
+    <section class="my-3" id="skills">
+      <h2 class="text-dark bg-primary p2 display-inline-block">Skills</h2>
+      <p>${skillsText}</p>
+    </section
+  `;
+};
+
+// Programming Languages
+
 // Generate the HTML containing project data
 const generateProjects = projectsArr => {
   return `
@@ -53,7 +69,7 @@ const generateProjects = projectsArr => {
 // Export function to generate entire page
 export const generatePage = (templateData) => {
   // Destructure page data by section
-  const { projects, about, ...header } = templateData;
+  const { projects, about, skills, ...header } = templateData;
 
   return `
     <!DOCTYPE html>
@@ -80,6 +96,7 @@ export const generatePage = (templateData) => {
 
       <main class="container my-5">
         ${generateAbout(about)}
+        ${generateSkillsPage(skills)}
         ${generateProjects(projects)}
       </main>
 
