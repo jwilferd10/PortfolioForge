@@ -1,9 +1,12 @@
+// Importing necessary modules
 import inquirer from 'inquirer';
 import { writeFile, copyFile } from './utils/generate-site.js';
 import { generatePage } from './src/page-template.js';
 
+// Function to prompt the user for information
 const promptUser = () => {
   return inquirer.prompt([
+    // Prompt for user's name
     {
       type: 'input', 
       name: 'name',
@@ -17,6 +20,7 @@ const promptUser = () => {
         }
       }
     },
+    // Prompt for user's GitHub username
     {
       type: 'input',
       name: 'github',
@@ -30,6 +34,7 @@ const promptUser = () => {
         }
       }
     },
+    // Prompt for About section
     {
       type: 'confirm',
       name: 'confirmAbout',
@@ -43,12 +48,14 @@ const promptUser = () => {
         }
       }
     },
+    // User input for About section
     {
       type: 'input',
       name: 'about',
       message: 'Provide some information about yourself:',
       when: ({ confirmAbout }) => confirmAbout
     },
+    // Prompt for Skills section
     {
       type: 'confirm',
       name: 'confirmSkills',
@@ -62,12 +69,14 @@ const promptUser = () => {
         }
       }
     },
+    // User input for Skills section
     {
       type: 'input',
       name: 'skills',
       message: 'Provide some details about your skillset:',
       when: ({ confirmSkills }) => confirmSkills
     },
+    // Prompt users to highlight their known programming languages
     {
       type: 'confirm', 
       name: 'confirmLanguages',
@@ -81,6 +90,7 @@ const promptUser = () => {
         }
       }
     },
+    // Checkbox a variety of languages user's must choose from
     {
       type: 'checkbox',
       name: 'codingLanguages',
@@ -91,6 +101,7 @@ const promptUser = () => {
   ]);
 };
 
+// Function to prompt the user for project information
 const promptProject = portfolioData => {
   if (!portfolioData.projects) {
     portfolioData.projects = [];
@@ -103,6 +114,7 @@ const promptProject = portfolioData => {
   `);
 
   return inquirer.prompt([
+    // Project Name
     {
       type: 'input',
       name: 'name',
@@ -116,17 +128,20 @@ const promptProject = portfolioData => {
         }
       }
     },
+    // Project Description
     {
       type: 'input',
       name: 'description',
       message: 'Provide a description of the project (Required)'
     },
+    // Project's Structural Languages
     {
       type: 'checkbox',
       name: 'languages',
       message: 'What did you build this project with? (Check all that apply)',
       choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node'] 
     },
+    // Project link to GitHub
     {
       type: 'input',
       name: 'link',
@@ -140,12 +155,14 @@ const promptProject = portfolioData => {
         }
       }
     },
+    // Confirm feature
     {
       type: 'confirm',
       name: 'feature',
       message: 'Would you like to feature this project?',
       default: false
     },
+    // Confirm add another project
     {
       type: 'confirm',
       name: 'confirmAddProject',
@@ -162,21 +179,29 @@ const promptProject = portfolioData => {
   });
 };
 
+// Start the process by prompting users for their information
 promptUser()
+  // Prompt for project information
   .then(promptProject)
+  // Generate the HTML page based on provided user data
   .then(portfolioData => {
     return generatePage(portfolioData);
   })
+  // Write generated HTML onto file
   .then(pageHTML => {
     return writeFile(pageHTML);
   })
+  // Success Log
   .then(writeFileResponse => {
     console.log(writeFileResponse);
+    // Copy additional files
     return copyFile();
   })
+  // Log success message after copying files
   .then(copyFileResponse => {
     console.log(copyFileResponse);
   })
+  // Handle any errors that occur during the process
   .catch(err => {
     console.log(err);
   });
