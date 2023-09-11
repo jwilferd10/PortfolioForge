@@ -42,7 +42,12 @@ const generateLanguageSpread = languageSpread => {
 };
 
 // Generate HTML cards for user achievements
-const generateAchievements = achievementArr => {
+const generateAchievements = (achievementArr) => {
+  // Check if the array is defined and is an array, return empty string if not.
+  if(!achievementArr || achievementArr.length === 0) {
+    return '';
+  }
+
   const featuredAchievements = achievementArr.map(({ achievementName, achievementDescription }) => {
     return `
       <div class="col-12 mb-2 bg-dark text-light p-3">
