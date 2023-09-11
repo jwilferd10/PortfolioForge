@@ -41,6 +41,32 @@ const generateLanguageSpread = languageSpread => {
   `;
 };
 
+// Generate HTML cards for user achievements
+const generateAchievements = achievementArr => {
+  const featuredAchievements = achievementArr.map(({ achievementName, achievementDescription }) => {
+    return `
+      <div class="col-12 mb-2 bg-dark text-light p-3">
+        <h3 class="portfolio-item-title text-light">${achievementName}</h3>
+        <h5 class="portfolio-languages">${achievementDescription}</h5>
+      </div>
+    `;
+  }).join(' ');
+
+  if (featuredAchievements.length === 0) {
+    // Return an empty string if there are no featured achievegments
+    return '';
+  }
+
+  return `
+    <section class="my-3" id="achievements">
+      <h2 class="text-dark bg-primary p-2 display-inline-block">Education & Achievements</h2>
+      <div class="flex-row justify-space-between">
+        ${featuredAchievements}
+      </div>
+    </section>
+  `;
+};
+
 // Generate the HTML containing project data
 const generateProjects = projectsArr => {
   return `
@@ -82,7 +108,7 @@ const generateProjects = projectsArr => {
 // Export function to generate entire page
 export const generatePage = (templateData) => {
   // Destructure page data by section
-  const { projects, about, skills, codingLanguages, ...header } = templateData;
+  const { projects, about, skills, codingLanguages, education, ...header } = templateData;
 
   return `
     <!DOCTYPE html>
@@ -111,6 +137,7 @@ export const generatePage = (templateData) => {
         ${generateAbout(about)}
         ${generateSkillsPage(skills)}
         ${generateLanguageSpread(codingLanguages)}
+        ${generateAchievements(education)}
         ${generateProjects(projects)}
       </main>
 
