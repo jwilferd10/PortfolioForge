@@ -20,7 +20,7 @@ const generateSkillsPage = skillsText => {
 
   return `
     <section class="my-3" id="skills">
-      <h2 class="text-dark bg-primary p2 display-inline-block">Skills</h2>
+      <h2 class="text-dark bg-primary p-2 display-inline-block">Skills</h2>
       <p>${skillsText}</p>
     </section
   `;
@@ -35,7 +35,7 @@ const generateLanguageSpread = languageSpread => {
 
   return `
     <section class="my-3" id="programmingLanguages">
-      <h3 class="text-dark bg-primary p2 display-inline-block">Programming Languages</h3>
+      <h3 class="text-dark bg-primary p-2 display-inline-block">Programming Languages</h3>
       <p>${languageSpread.join(', ')}</p>
     </section>
   `;
