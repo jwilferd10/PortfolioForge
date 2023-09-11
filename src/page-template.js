@@ -44,7 +44,7 @@ const generateLanguageSpread = languageSpread => {
 // Generate HTML cards for user achievements
 const generateAchievements = (achievementArr) => {
   // Check if the array is defined and is an array, return empty string if not.
-  if(!achievementArr || achievementArr.length === 0) {
+  if (!achievementArr || achievementArr.length === 0) {
     return '';
   }
 
