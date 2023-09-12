@@ -22,7 +22,7 @@ const generateSkillsPage = skillsText => {
     <section class="my-3" id="skills">
       <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">Skills</h2>
       <p>${skillsText}</p>
-    </section
+    </section>
   `;
 };
 
