@@ -6,7 +6,7 @@ const generateAbout = aboutText => {
 
   return `
     <section class="my-3" id="about">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1">About Me</h2>
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">About Me</h2>
       <p>${aboutText}</p>
     </section>
   `;
@@ -20,7 +20,7 @@ const generateSkillsPage = skillsText => {
 
   return `
     <section class="my-3" id="skills">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1">Skills</h2>
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">Skills</h2>
       <p>${skillsText}</p>
     </section
   `;
@@ -35,7 +35,7 @@ const generateLanguageSpread = languageSpread => {
 
   return `
     <section class="my-3" id="programmingLanguages">
-      <h3 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1">Programming Languages</h3>
+      <h3 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">Programming Languages</h3>
       <p>${languageSpread.join(', ')}</p>
     </section>
   `;
@@ -64,7 +64,7 @@ const generateAchievements = (achievementArr) => {
 
   return `
     <section class="my-3" id="achievements">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1">Education & Achievements</h2>
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">Education & Achievements</h2>
       <div class="flex-row justify-space-between">
         ${featuredAchievements}
       </div>
@@ -76,7 +76,7 @@ const generateAchievements = (achievementArr) => {
 const generateProjects = projectsArr => {
   return `
     <section class="my-3" id="portfolio">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1">Work</h2>
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">Work</h2>
       <div class="flex-row justify-space-between">
       ${projectsArr.filter(({ feature }) => feature).map(({ name, description, languages, link }) => {
         return `
