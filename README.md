@@ -1,6 +1,7 @@
 # PortfolioForge
+### Create a portfolio, develop your online footprint.
 
-:computer: **Github Repository**:
+:computer: **Github Repository**: https://github.com/jwilferd10/PortfolioForge
 
 ## :open_file_folder: Table of Contents:
   - [Preview](#camera-preview)
@@ -27,7 +28,7 @@ In our ever-evolving world, the internet has become an integral part of our live
 - Can be used as a foundation for further development and customization.
 
 ### :globe_with_meridians: Open
-PortfolioForge is designed for everyone to easily create a web profile. This repository is open to the public, fostering exploration and creativity. Feel free to dive into the codebase, generate profiles, fork the project, and tailor it to your requirements. We're completely open-source.
+PortfolioForge was designed so that anyone can easily create a web profile. That's why this repository is open to the public, fostering exploration and creativity. Feel free to dive into the codebase, generate profiles, fork the project, and tailor it to your requirements. We're completely open-source.
 
 ### 💭 Developer Notes
 PortfolioForge was a fun, exciting, and educational project to work on. This was the project where I first learned and utilized concepts such as Node.js, NPM, and subsequently Inquirer. Furthermore, I've updated Inquirer to use version 9.2.8, enhancing the user experience and ensuring compatibility with the latest features and improvements.
