@@ -123,6 +123,23 @@ nav a:hover {
   display: inline;
 }
 
+.rounded-edges1 {
+  border-radius: 15px;
+}
+
+.rounded-edges2 {
+  border-radius: 25px;
+  box-shadow: 0px 5px 7px black;
+}
+
+.box-shadow1 {
+  box-shadow: 0px 2px 3px black;
+}
+
+.box-shadow2 {
+  box-shadow: 0px 3px 2px black;
+}
+
 /* CARDS */
 .card {
   margin: 0 0 20px 0;
