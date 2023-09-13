@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 # PortfolioForge
 ### Create a portfolio, develop your online footprint.
 
@@ -36,7 +38,7 @@ PortfolioForge was a fun, exciting, and educational project to work on. This was
 This project has allowed me to gain hands-on experience with modern development tools and practices, making it a valuable learning journey. The process of updating and maintaining this project reinforced my knowledge in software development, project management, and version control, providing what I believe is a solid foundation for future endeavors. 
 
 ### 🙏 Thank You!
-So much for your interest in PortfolioForge. My intention is that it proves helpful to you and sparks the idea that you can create a unique online portfolio, whether or not you choose to use PortfolioForge. Thanks again and I happy coding!
+So much for your interest in PortfolioForge. My intention is that it proves helpful to you and sparks the idea that you can create a unique online portfolio, whether or not you choose to use PortfolioForge. Thanks again and happy coding!
 
 ## :book: User Story:
 Coming Soon!
