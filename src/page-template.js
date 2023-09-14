@@ -110,10 +110,22 @@ const generateProjects = projectsArr => {
   `;
 }
 
+// Select style.css based off of user choice
+const selectColorTheme = styleSheet => {
+  if (!styleSheet) {
+    return 'default.css';
+  }
+
+  // Otherwise, return HTML with appropriate data
+  return `
+    <link rel="stylesheet href="${styleSheet}">
+  `;
+}
+
 // Export function to generate entire page
 export const generatePage = (templateData) => {
   // Destructure page data by section
-  const { projects, about, skills, codingLanguages, education, ...header } = templateData;
+  const { projects, about, skills, codingLanguages, education, colorTheme, ...header } = templateData;
 
   return `
     <!DOCTYPE html>
@@ -126,6 +138,7 @@ export const generatePage = (templateData) => {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
       <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="style.css">
+      ${selectColorTheme(colorTheme)}
     </head>
   
     <body>
