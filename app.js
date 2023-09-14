@@ -117,7 +117,7 @@ const promptUser = () => {
       type: 'rawlist',
       name: 'colorTheme',
       message: 'Pick a color theme for your portfolio.',
-      choices: ["Default", "Deep Lavender & Charcoal", "Dusk Pink & Slate Gray", "Darker Pastel Plum & Teal", "Gentle Peach & Lilac", "Earthy Serenity", "Soothing Lavender & Mint", "Tech Innovation", "Modern Pink & White", "Contemporary Red & Black", "Elegant Violet & Gold", "Nature-Inspired Green & Brown", "Futuristic Blue & Silver", "Soft Pastel Delight", "Muted Earth Tones"],
+      choices: ["Deep Lavender & Charcoal", "Dusk Pink & Slate Gray", "Darker Pastel Plum & Teal", "Gentle Peach & Lilac", "Serenity", "Soothing Lavender & Mint", "Blue & Silver", "Soft Pastel Delight", "Muted Earth Tones"],
       default: 0,
     }
   ]).then(userResponses => {
