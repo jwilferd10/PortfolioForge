@@ -1,3 +1,5 @@
+import { copyFile } from '../utils/generate-site.js';
+
 // Mapping object for colorTheme
 const colorThemeMapping = {
   "default": "default",
@@ -142,6 +144,16 @@ const selectColorTheme = cssFileName => {
 export const generatePage = (templateData) => {
   // Destructure page data by section
   const { projects, about, skills, codingLanguages, education, colorTheme, ...header } = templateData;
+
+  // Copy the selected CSS file to the /dist directory
+  const selectedCSSFile = colorThemeMapping[colorTheme];
+  copyFile(selectedCSSFile)
+    .then(() => {
+      console.log(`${selectedCSSFile} copied to /dist`)
+    })
+    .catch((err) => {
+      console.error(`Error copying ${selectedCSSFile}: ${err}`);
+    });
 
   return `
     <!DOCTYPE html>

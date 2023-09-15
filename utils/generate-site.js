@@ -18,7 +18,11 @@ export const writeFile = fileContent => {
     });
 };
 
-export const copyFile = () => {
+export const copyFile = (cssFileName) => {
+
+    const sourcePath = `./src/${cssFileName}`;
+    const destinationPath = `./dist/${cssFileName}`;
+    
     return new Promise((resolve, reject) => {
         fs.copyFile('./src/style.css', './dist/style.css', err => {
             // If err is true, reject promise
@@ -33,7 +37,15 @@ export const copyFile = () => {
                 message: 'Stylesheet Created!'
             });
         });
+        fs.copyFile(sourcePath, destinationPath, (err) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve({
+                    ok: true,
+                    message: `${cssFileName} copied to /dist`,
+                });
+            }
+        });
     });
-
-    // ADJUST SO THAT NEW CSS PRINTS HERE
 };
