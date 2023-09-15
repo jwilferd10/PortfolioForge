@@ -1,3 +1,17 @@
+// Mapping object for colorTheme
+const colorThemeMapping = {
+  "default": "default",
+  "Deep Lavender & Charcoal": "deep-lavender.css",
+  "Dusk Pink & Slate Gray": "dusk-pink.css",
+  "Darker Pastel Plum & Teal": "darker-pastel.css",
+  "Gentle Peach & Lilac": "gentle-peach.css",
+  "Serenity": "serenity.css",
+  "Soothing Lavender & Mint": "lavender-mint.css",
+  "Blue & Silver": "blue-silver.css",
+  "Soft Pastel Delight": "soft-pastel.css",
+  "Muted Earth Tones": "earth-tones.css"
+}
+
 // User About Section
 const generateAbout = aboutText => {
   if (!aboutText) {
@@ -111,14 +125,16 @@ const generateProjects = projectsArr => {
 }
 
 // Select style.css based off of user choice
-const selectColorTheme = styleSheet => {
-  if (!styleSheet) {
+const selectColorTheme = cssFileName => {
+  if (!cssFileName) {
     return 'default.css';
   }
 
+  const selectedColorTheme = colorThemeMapping[cssFileName];
+
   // Otherwise, return HTML with appropriate data
   return `
-    <link rel="stylesheet href="${styleSheet}">
+    <link rel="stylesheet" href="${selectedColorTheme}">
   `;
 }
 

@@ -120,7 +120,8 @@ const promptUser = () => {
       choices: ["Deep Lavender & Charcoal", "Dusk Pink & Slate Gray", "Darker Pastel Plum & Teal", "Gentle Peach & Lilac", "Serenity", "Soothing Lavender & Mint", "Blue & Silver", "Soft Pastel Delight", "Muted Earth Tones"],
       default: 0,
     }
-  ]).then(userResponses => {
+  ])
+  .then(userResponses => {
     // Check if user wants to include Education/Certifications
     if (userResponses.confirmEducation) {
       // Call promptEducation and pass portfolioData
