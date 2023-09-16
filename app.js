@@ -2,6 +2,7 @@
 import inquirer from 'inquirer';
 import { writeFile, copyGenericCSSFile } from './utils/generate-site.js';
 import { generatePage } from './src/page-template.js';
+import { clearDistDirectory } from './utils/clearDistDirectory.js';
 
 // Function to prompt the user for information
 const promptUser = () => {
@@ -252,7 +253,7 @@ const promptProject = (portfolioData) => {
   });
 };
 
-// Start the process by prompting users for their information
+clearDistDirectory();
 promptUser()
   // Prompt for project information
   .then(promptProject)
