@@ -10,12 +10,18 @@ export const clearDistDirectory = () => {
         // Using Node.js readdirSync() to read through the directory files 
         const files = fs.readdirSync(distPath)
 
-        console.log(files);
-    
-        // loop through the list and delete each ile
+        // For each item in the list, loop through and delete.
+        files.forEach((file) => {
+            const filePath = `${distPath}/${file}`;
 
-        // log results
-
+            // Check if the path points to a file. Using fs.statSync to get file status information. isFile() is checking if it's indeed a file.
+            if (fs.statSync(filePath).isFile()) {
+                // Use unlinkSync to remove the filePath.
+                fs.unlinkSync(filePath);
+            }
+        });
+        
+        console.log('Files inside /dist directory have been cleared!');
     } catch (err) {
         console.log('There was an error clearing the files!');
     }
