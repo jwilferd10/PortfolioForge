@@ -18,32 +18,36 @@ export const writeFile = fileContent => {
     });
 };
 
-export const copyFile = (cssFileName) => {
-
-    const sourcePath = `./src/${cssFileName}`;
-    const destinationPath = `./dist/${cssFileName}`;
-    
+export const copyGenericCSSFile = () => {    
     return new Promise((resolve, reject) => {
         fs.copyFile('./src/style.css', './dist/style.css', err => {
             // If err is true, reject promise
             if (err) {
                 reject(err);
-                return;
             }
 
             // Resolve the promise and copy the stylesheet
             resolve({
                 ok: true,
-                message: 'Stylesheet Created!'
+                message: 'Base Stylesheet Created!'
             });
         });
+    });
+};
+
+
+export const copySelectedCSSFile = (selectedCSSFile) => {
+    const sourcePath = `./src/${selectedCSSFile}`;
+    const destinationPath = `./dist/${selectedCSSFile}`;
+
+    return new Promise((resolve, reject) => {
         fs.copyFile(sourcePath, destinationPath, (err) => {
             if (err) {
                 reject(err);
             } else {
-                resolve({
+                resolve ({
                     ok: true,
-                    message: `${cssFileName} copied to /dist`,
+                    message: `${selectedCSSFile} successfully copied to /dist!`
                 });
             }
         });

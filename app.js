@@ -1,6 +1,6 @@
 // Importing necessary modules
 import inquirer from 'inquirer';
-import { writeFile, copyFile } from './utils/generate-site.js';
+import { writeFile, copyGenericCSSFile } from './utils/generate-site.js';
 import { generatePage } from './src/page-template.js';
 
 // Function to prompt the user for information
@@ -264,11 +264,10 @@ promptUser()
   .then(pageHTML => {
     return writeFile(pageHTML);
   })
-  // Success Log
+  // Copy CSS File and return it
   .then(writeFileResponse => {
     console.log(writeFileResponse);
-    // Copy additional files
-    return copyFile();
+    return copyGenericCSSFile();
   })
   // Log success message after copying files
   .then(copyFileResponse => {

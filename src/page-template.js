@@ -1,4 +1,4 @@
-import { copyFile } from '../utils/generate-site.js';
+import { copySelectedCSSFile } from '../utils/generate-site.js';
 
 // Mapping object for colorTheme
 const colorThemeMapping = {
@@ -128,8 +128,9 @@ const generateProjects = projectsArr => {
 
 // Select style.css based off of user choice
 const selectColorTheme = cssFileName => {
-  if (!cssFileName) {
-    return 'default.css';
+  if (!cssFileName || !colorThemeMapping[cssFileName]) {
+    // Use the default.css file
+    cssFileName = 'default.css';
   }
 
   const selectedColorTheme = colorThemeMapping[cssFileName];
@@ -147,12 +148,13 @@ export const generatePage = (templateData) => {
 
   // Copy the selected CSS file to the /dist directory
   const selectedCSSFile = colorThemeMapping[colorTheme];
-  copyFile(selectedCSSFile)
+
+  copySelectedCSSFile(selectedCSSFile)
     .then(() => {
-      console.log(`${selectedCSSFile} copied to /dist`)
+      console.log(`${selectedCSSFile} Has been applied to your portfolio!`)
     })
     .catch((err) => {
-      console.error(`Error copying ${selectedCSSFile}: ${err}`);
+      console.error(`Error with: ${selectedCSSFile}: ${err}`);
     });
 
   return `
