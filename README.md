@@ -26,16 +26,20 @@ In our ever-evolving world, the internet has become an integral part of our live
 ### :rocket: Features:
 - Powered by Inquirer, users are guided through the portfolio creation process with multiple questions.
 - Tailor your portfolio to highlight your projects and showcase your unique strengths and experiences.
+- Further customize your portfolio by selecting a color theme
 - Generate a ready-to-use web profile.
-- Can be used as a foundation for further development and customization.
+- Provides a solid foundation for future development and customization.
+  - Includes a well-structured style.css for easy customization.
+  - Access to FontAwesome for diverse and accessible image options.
 
 ### :globe_with_meridians: Open
 PortfolioForge was designed so that anyone can easily create a web profile. That's why this repository is open to the public, fostering exploration and creativity. Feel free to dive into the codebase, generate profiles, fork the project, and tailor it to your requirements. We're completely open-source.
 
 ### 💭 Developer Notes
-PortfolioForge was a fun, exciting, and educational project to work on. This was the project where I first learned and utilized concepts such as Node.js, NPM, and subsequently Inquirer. Furthermore, I've updated Inquirer to use version 9.2.8, enhancing the user experience and ensuring compatibility with the latest features and improvements.
+- I've updated Inquirer to use `version 9.2.8`, enhancing the user experience and ensuring compatibility with the latest features and improvements. 
+- New `Color Themes` have been added to the project, allowing for a more customizeable experience
 
-This project has allowed me to gain hands-on experience with modern development tools and practices, making it a valuable learning journey. The process of updating and maintaining this project reinforced my knowledge in software development, project management, and version control, providing what I believe is a solid foundation for future endeavors. 
+PortfolioForge was a fun, exciting, and educational project to work on. This was the project where I first learned and utilized concepts such as Node.js, NPM, and subsequently Inquirer. This project has allowed me to gain hands-on experience with modern development tools and practices, making it a valuable learning journey. The process of updating and maintaining this project reinforced my knowledge in software development, project management, and version control, providing what I believe is a solid foundation for future endeavors. 
 
 ### 🙏 Thank You!
 So much for your interest in PortfolioForge. My intention is that it proves helpful to you and sparks the idea that you can create a unique online portfolio, whether or not you choose to use PortfolioForge. Thanks again and happy coding!
@@ -47,6 +51,7 @@ Coming Soon!
 - Node.js
 - NPM (Node Package Manager)
 - Inquirer.js (v.^9.2.8)
+- FontAwesome (v.5.11.2)
 - HTML
 - CSS
 
@@ -99,7 +104,7 @@ If you encounter any issues, please open an issue on this repository
 This project is licensed under the MIT License.
 
 ## :paperclip: Contributors
-- jwilferd10
+- jwilferd10 (UX/UI Adjustments, Updated Inquirer, Select Color Theme, New Portfolio Sections)
 - UCLA Coding Bootcamp (Base Setup)
 
   
