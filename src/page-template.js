@@ -2,7 +2,7 @@ import { copySelectedCSSFile } from '../utils/generate-site.js';
 
 // Mapping object for colorTheme
 const colorThemeMapping = {
-  "default": "default",
+  "Default": "default",
   "Deep Lavender & Charcoal": "deep-lavender.css",
   "Dusk Pink & Slate Gray": "dusk-pink.css",
   "Darker Pastel Plum & Teal": "darker-pastel.css",
