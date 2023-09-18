@@ -12,10 +12,10 @@ const colorThemeMapping = {
   "Blue & Silver": "blue-silver.css",
   "Soft Pastel Delight": "soft-pastel.css",
   "Muted Earth Tones": "earth-tones.css"
-}
+};
 
 // Portfolio Emoji's
-const emojis = {
+const emojiMapping = {
   comment: '<i class="fas fa-comment-dots"></i>',
   tools: '<i class="fas fa-tools"></i>',
   database: '<i class="fas fa-database"></i>',
@@ -24,54 +24,66 @@ const emojis = {
 };
 
 // User About Section
-const generateAbout = aboutText => {
+const generateAbout = (aboutText, emojis) => {
   if (!aboutText) {
     return '';
   }
 
+  const emojiType = emojis ? emojiMapping.comment : '';
+  const emojiHeader = generateEmojiHeader(emojiType);
+
   return `
     <section class="my-3" id="about">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">About Me</h2>
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">${emojiHeader} About Me</h2>
       <p>${aboutText}</p>
     </section>
   `;
 };
 
 // User Skills Section
-const generateSkillsPage = skillsText => {
+const generateSkillsPage = (skillsText, emojis) => {
   if (!skillsText) {
     return '';
   }
 
+  const emojiType = emojis ? emojiMapping.tools : '';
+  const emojiHeader = generateEmojiHeader(emojiType);
+
   return `
     <section class="my-3" id="skills">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">Skills</h2>
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">${emojiHeader} Skills</h2>
       <p>${skillsText}</p>
     </section>
   `;
 };
 
 // Programming Languages
-const generateLanguageSpread = languageSpread => {
+const generateLanguageSpread = (languageSpread, emojis) => {
   // Return an empty string if there are no languages provided or the array is empty
   if (!languageSpread || languageSpread.length === 0) {
     return '';
   }
 
+  const emojiType = emojis ? emojiMapping.database : '';
+  const emojiHeader = generateEmojiHeader(emojiType);
+
   return `
     <section class="my-3" id="programmingLanguages">
-      <h3 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">Programming Languages</h3>
+      <h3 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">${emojiHeader} Programming Languages</h3>
       <p>${languageSpread.join(', ')}</p>
     </section>
   `;
 };
 
 // Generate HTML cards for user achievements
-const generateAchievements = (achievementArr) => {
+const generateAchievements = (achievementArr, emojis) => {
   // Check if the array is defined and is an array, return empty string if not.
   if (!achievementArr || achievementArr.length === 0) {
     return '';
   }
+
+  const emojiType = emojis ? emojiMapping.book : '';
+  const emojiHeader = generateEmojiHeader(emojiType);
 
   const featuredAchievements = achievementArr.map(({ achievementName, achievementDescription }) => {
     return `
@@ -89,7 +101,7 @@ const generateAchievements = (achievementArr) => {
 
   return `
     <section class="my-3" id="achievements">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">Education & Achievements</h2>
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">${emojiHeader} Education & Achievements</h2>
       <div class="flex-row justify-space-between">
         ${featuredAchievements}
       </div>
@@ -98,10 +110,14 @@ const generateAchievements = (achievementArr) => {
 };
 
 // Generate the HTML containing project data
-const generateProjects = projectsArr => {
+const generateProjects = (projectsArr, emojis) => {
+
+  const emojiType = emojis ? emojiMapping.briefcase : '';
+  const emojiHeader = generateEmojiHeader(emojiType);
+
   return `
     <section class="my-3" id="portfolio">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">Work</h2>
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">${emojiHeader} Work</h2>
       <div class="flex-row justify-space-between">
       ${projectsArr.filter(({ feature }) => feature).map(({ name, description, languages, link }) => {
         return `
@@ -133,7 +149,7 @@ const generateProjects = projectsArr => {
         </div>
       </section>
   `;
-}
+};
 
 // Select style.css based off of user choice
 const selectColorTheme = cssFileName => {
@@ -148,12 +164,20 @@ const selectColorTheme = cssFileName => {
   return `
     <link rel="stylesheet" href="${selectedColorTheme}">
   `;
-}
+};
+
+const generateEmojiHeader = emojiHeader => {
+  if (!emojiHeader) {
+    return '';
+  }
+
+  return `${emojiHeader}`;
+};
 
 // Export function to generate entire page
 export const generatePage = (templateData) => {
   // Destructure page data by section
-  const { projects, about, skills, codingLanguages, education, colorTheme, ...header } = templateData;
+  const { projects, about, skills, codingLanguages, education, colorTheme, confirmEmojis, ...header } = templateData;
 
   // Copy the selected CSS file to the /dist directory
   const selectedCSSFile = colorThemeMapping[colorTheme];
@@ -191,11 +215,11 @@ export const generatePage = (templateData) => {
       </header>
 
       <main class="container my-5">
-        ${generateAbout(about)}
-        ${generateSkillsPage(skills)}
-        ${generateLanguageSpread(codingLanguages)}
-        ${generateAchievements(education)}
-        ${generateProjects(projects)}
+        ${generateAbout(about, confirmEmojis)}
+        ${generateSkillsPage(skills, confirmEmojis)}
+        ${generateLanguageSpread(codingLanguages, confirmEmojis)}
+        ${generateAchievements(education, confirmEmojis)}
+        ${generateProjects(projects, confirmEmojis)}
       </main>
 
       <footer class="container text-center py-3">

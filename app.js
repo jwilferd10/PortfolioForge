@@ -116,9 +116,16 @@ const promptUser = () => {
     // Prompt user to set Emoji true/false
     {
       type: 'confirm',
-      name: 'includeEmojis',
+      name: 'confirmEmojis',
       message: 'Do you want to include emojis in your headers?',
       default: false,
+      validate: ({ emojis }) => {
+        if (emojis) {
+          return true;
+        } else {
+          return false;
+        }
+      }
     },
     // Prompt user to pick a style for their portfolio
     {
