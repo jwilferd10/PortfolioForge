@@ -34,7 +34,7 @@ const generateAbout = (aboutText, emojis) => {
 
   return `
     <section class="my-3" id="about">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">${emojiHeader} About Me</h2>
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 px-3 mb-3">${emojiHeader} About Me</h2>
       <p>${aboutText}</p>
     </section>
   `;
@@ -51,7 +51,7 @@ const generateSkillsPage = (skillsText, emojis) => {
 
   return `
     <section class="my-3" id="skills">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">${emojiHeader} Skills</h2>
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 px-3 mb-3">${emojiHeader} Skills</h2>
       <p>${skillsText}</p>
     </section>
   `;
@@ -69,7 +69,7 @@ const generateLanguageSpread = (languageSpread, emojis) => {
 
   return `
     <section class="my-3" id="programmingLanguages">
-      <h3 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">${emojiHeader} Programming Languages</h3>
+      <h3 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 px-3 mb-3">${emojiHeader} Programming Languages</h3>
       <p>${languageSpread.join(', ')}</p>
     </section>
   `;
@@ -101,7 +101,7 @@ const generateAchievements = (achievementArr, emojis) => {
 
   return `
     <section class="my-3" id="achievements">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3 target1">${emojiHeader} Education & Achievements</h2>
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3 px-3 target1">${emojiHeader} Education & Achievements</h2>
       <div class="flex-row justify-space-between">
         ${featuredAchievements}
       </div>
@@ -117,7 +117,7 @@ const generateProjects = (projectsArr, emojis) => {
 
   return `
     <section class="my-3" id="portfolio">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">${emojiHeader} Work</h2>
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 px-3 mb-3">${emojiHeader} Work</h2>
       <div class="flex-row justify-space-between">
       ${projectsArr.filter(({ feature }) => feature).map(({ name, description, languages, link }) => {
         return `
