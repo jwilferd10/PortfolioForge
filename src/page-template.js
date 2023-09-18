@@ -209,7 +209,7 @@ export const generatePage = (templateData) => {
         <div class="container flex-row justify-space-between align-center py-3">
           <h1 class="page-title rounded-edges2 box-shadow2 spacing-five text-secondary bg-dark px-3">${header.name}</h1>
           <nav class="flex-row">
-            <a class="ml-2 my-1 px-2 py-1 bg-secondary text-dark" href="https://github.com/${header.github}">GitHub</a>
+            <a class="gitHubLink ml-2 my-1 px-2 py-1 bg-secondary text-dark" href="https://github.com/${header.github}">GitHub</a>
           </nav>
         </div>
       </header>

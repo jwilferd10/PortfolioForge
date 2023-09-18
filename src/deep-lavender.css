@@ -6,3 +6,11 @@
     --light: #ffffff;
     --dark: #333333;
 }
+
+p {
+    color: var(--light);
+}
+
+.page-title {
+    color: var(--light);
+}
