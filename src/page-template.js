@@ -69,7 +69,7 @@ const generateLanguageSpread = (languageSpread, emojis) => {
 
   return `
     <section class="my-3" id="programmingLanguages">
-      <h3 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 px-3 mb-3">${emojiHeader} Programming Languages</h3>
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 px-3 mb-3">${emojiHeader} Programming Languages</h2>
       <p>${languageSpread.join(', ')}</p>
     </section>
   `;
