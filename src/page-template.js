@@ -101,7 +101,7 @@ const generateAchievements = (achievementArr, emojis) => {
 
   return `
     <section class="my-3" id="achievements">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3">${emojiHeader} Education & Achievements</h2>
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3 target1">${emojiHeader} Education & Achievements</h2>
       <div class="flex-row justify-space-between">
         ${featuredAchievements}
       </div>
@@ -121,7 +121,7 @@ const generateProjects = (projectsArr, emojis) => {
       <div class="flex-row justify-space-between">
       ${projectsArr.filter(({ feature }) => feature).map(({ name, description, languages, link }) => {
         return `
-          <div class="col-12 mb-2 bg-dark text-light p-3 rounded-edges2 box-shadow2">
+          <div class="col-12 mb-2 bg-dark text-light p-3 rounded-edges2 box-shadow2 target1">
             <h3 class="portfolio-item-title text-light">${name}</h3>
             <h5 class="portfolio-languages">
               Built With:
@@ -207,7 +207,7 @@ export const generatePage = (templateData) => {
     <body>
       <header>
         <div class="container flex-row justify-space-between align-center py-3">
-          <h1 class="page-title rounded-edges2 box-shadow2 spacing-five text-secondary bg-dark px-3">${header.name}</h1>
+          <h1 class="target1 page-title rounded-edges2 box-shadow2 spacing-five text-secondary bg-dark px-3">${header.name}</h1>
           <nav class="flex-row">
             <a class="gitHubLink ml-2 my-1 px-2 py-1 bg-secondary text-dark" href="https://github.com/${header.github}">GitHub</a>
           </nav>

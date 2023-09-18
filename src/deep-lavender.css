@@ -14,3 +14,11 @@ p {
 .page-title {
     color: var(--light);
 }
+
+.gitHubLink {
+    color: var(--light);
+}
+
+.target1 {
+    background-color: #515151a8 !important;
+}
