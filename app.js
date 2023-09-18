@@ -113,6 +113,13 @@ const promptUser = () => {
         }
       }
     },
+    // Prompt user to set Emoji true/false
+    {
+      type: 'confirm',
+      name: 'includeEmojis',
+      message: 'Do you want to include emojis in your headers?',
+      default: false,
+    },
     // Prompt user to pick a style for their portfolio
     {
       type: 'rawlist',
