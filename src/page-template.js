@@ -208,10 +208,10 @@ export const generatePage = (templateData) => {
       <header>
         <div class="container flex-row justify-space-between align-center py-3">
           <h1 class="target1 page-title rounded-edges2 box-shadow2 spacing-five text-secondary bg-dark px-3">${header.name}</h1>
-          <nav class="flex-row">
-            <a class="gitHubLink ml-2 my-1 px-2 py-1 bg-secondary text-dark" href="https://github.com/${header.github}">GitHub</a>
-          </nav>
         </div>
+        <nav class="container pb-4 flex-row justify-flex-start">
+          <a class="socialLinks gitHubLink ml-2 my-1 px-2 py-1 bg-secondary text-dark d-flex align-items-center" href="https://github.com/${header.github}"><i class="fab fa-github fa-2x"></i></a>
+        </nav>
       </header>
 
       <main class="container my-5">

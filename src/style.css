@@ -84,6 +84,10 @@ nav a:hover {
   background-color: var(--dark);
 }
 
+.socialLinks {
+  border-radius: 50%;
+}
+
 .page-title {
   text-align: center;
   width: auto;
