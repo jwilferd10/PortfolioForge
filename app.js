@@ -4,10 +4,9 @@ import { writeFile, copyGenericCSSFile } from './utils/generate-site.js';
 import { generatePage } from './src/page-template.js';
 import { clearDistDirectory } from './utils/clearDistDirectory.js';
 
-// Function to prompt the user for information
+// Function to prompt the user for information they wish to include
 const promptUser = () => {
   return inquirer.prompt([
-    // Prompt for user's name
     {
       type: 'input', 
       name: 'name',
@@ -21,7 +20,6 @@ const promptUser = () => {
         }
       }
     },
-    // Prompt for user's GitHub username
     {
       type: 'input',
       name: 'github',
@@ -35,7 +33,6 @@ const promptUser = () => {
         }
       }
     },
-    // Prompt for About section
     {
       type: 'confirm',
       name: 'confirmAbout',
@@ -49,14 +46,12 @@ const promptUser = () => {
         }
       }
     },
-    // User input for About section
     {
       type: 'input',
       name: 'about',
       message: 'Provide some information about yourself:',
       when: ({ confirmAbout }) => confirmAbout
     },
-    // Prompt for Skills section
     {
       type: 'confirm',
       name: 'confirmSkills',
@@ -70,14 +65,12 @@ const promptUser = () => {
         }
       }
     },
-    // User input for Skills section
     {
       type: 'input',
       name: 'skills',
       message: 'Provide some details about your skillset:',
       when: ({ confirmSkills }) => confirmSkills
     },
-    // Prompt users to highlight their known programming languages
     {
       type: 'confirm', 
       name: 'confirmLanguages',
@@ -91,7 +84,6 @@ const promptUser = () => {
         }
       }
     },
-    // Checkbox a variety of languages user's must choose from
     {
       type: 'checkbox',
       name: 'codingLanguages',
@@ -99,7 +91,6 @@ const promptUser = () => {
       choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node.js', 'Python', 'Java', 'Ruby', 'C++', 'PHP', 'Swift', 'TypeScript', 'Go', 'Rust', 'Kotlin', 'SQL', 'Perl', 'C#', 'Dart', 'Scala', 'Haskell', 'Objective-C', 'Lua'],
       when: ({ confirmLanguages }) => confirmLanguages
     },
-    // Prompt user to include any information about their education
     {
       type: 'confirm',
       name: 'confirmEducation',
@@ -113,7 +104,6 @@ const promptUser = () => {
         }
       }
     },
-    // Prompt user to set Emoji true/false
     {
       type: 'confirm',
       name: 'confirmEmojis',
@@ -127,7 +117,6 @@ const promptUser = () => {
         }
       }
     },
-    // Prompt user to pick a style for their portfolio
     {
       type: 'rawlist',
       name: 'colorTheme',
@@ -161,8 +150,8 @@ const promptEducation = portfolioData => {
     ==============================================
   `);
 
+  // Name of Education and Certification, Description
   return inquirer.prompt([
-    // Name of Education and Certification
     {
       type: 'input',
       name: 'achievementName',
@@ -176,7 +165,6 @@ const promptEducation = portfolioData => {
         }
       }
     },
-    // Achievement Description
     {
       type: 'input',
       name: 'achievementDescription',
@@ -201,8 +189,8 @@ const promptProject = (portfolioData) => {
     =================
   `);
 
+  // Project Name, Descrpition, Structural Languages, Link, Feature
   return inquirer.prompt([
-    // Project Name
     {
       type: 'input',
       name: 'name',
@@ -216,20 +204,17 @@ const promptProject = (portfolioData) => {
         }
       }
     },
-    // Project Description
     {
       type: 'input',
       name: 'description',
       message: 'Provide a description of the project (Required)'
     },
-    // Project's Structural Languages
     {
       type: 'checkbox',
       name: 'languages',
       message: 'What did you build this project with? (Check all that apply)',
       choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node'] 
     },
-    // Project link to GitHub
     {
       type: 'input',
       name: 'link',
@@ -243,14 +228,12 @@ const promptProject = (portfolioData) => {
         }
       }
     },
-    // Confirm feature
     {
       type: 'confirm',
       name: 'feature',
       message: 'Would you like to feature this project?',
       default: false
     },
-    // Confirm add another project
     {
       type: 'confirm',
       name: 'confirmAddProject',
