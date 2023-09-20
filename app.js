@@ -142,8 +142,9 @@ const promptUser = () => {
 
 // Function to prompt users if they'd like to include social media links
 const promptSocialMedia = portfolioData => {
-  if (!portfolioData.socialMedia) {
-    portfolioData.socialMedia = [];
+  if (!portfolioData.header) {
+    // Initialize header object if it doesn't exist
+    portfolioData.header = {};
   }
 
     console.log(`
@@ -231,12 +232,17 @@ const promptSocialMedia = portfolioData => {
       when: ({ faceBookLink }) => faceBookLink
     },
   ]).then((socialMediaData) => {
-    portfolioData.socialMedia.push(socialMediaData);
-    // Return
+    // Initialize social media data array if it doesn't exist
+    if (!portfolioData.header.socialMediaData) {
+      portfolioData.header.socialMediaData = [];
+    }
+    
+    // Push new social media data into the array
+    portfolioData.header.socialMediaData.push(socialMediaData);
+
     return portfolioData;
   });
 };
-
 
 // Function to prompt user about Education and Certification achievements
 const promptEducation = portfolioData => {
@@ -355,11 +361,8 @@ promptUser()
   .then(userResponses => {
     // Check if the user is including Social Media links
     if (userResponses.confirmSocialMedia) {
-      return promptSocialMedia(userResponses).then(socialMediaData => ({
-        ...userResponses,
-        socialMediaData
-      }))
-    }
+        return promptSocialMedia(userResponses);
+    };
 
     // Check if the user is including Education/Certifications
     if (userResponses.confirmEducation) {
