@@ -125,17 +125,6 @@ const promptUser = () => {
       default: 0,
     }
   ])
-  .then(userResponses => {
-    // Check if user wants to include Education/Certifications
-    if (userResponses.confirmEducation) {
-      // Call promptEducation and pass portfolioData
-      return promptEducation(userResponses).then(educationData => ({
-        ...userResponses,
-        educationData
-      }));
-    }
-    return userResponses;
-  })
 };
 
 // Function to prompt users if they'd like to include social media links
@@ -224,12 +213,16 @@ const promptSocialMedia = portfolioData => {
     },
     {
       type: 'input',
-      name:'facebookLinkb',
+      name:'facebookLink',
       message: 'Enter your facebook username',
       when: ({ facebookLink }) => facebookLink
     },
-  ])
-}
+  ]).then((socialMediaData) => {
+    portfolioData.socialMedia.push(socialMediaData);
+    // Return
+    return portfolioData;
+  });
+};
 
 
 // Function to prompt user about Education and Certification achievements
@@ -346,6 +339,17 @@ const promptProject = (portfolioData) => {
 
 clearDistDirectory();
 promptUser()
+  .then(userResponses => {
+    // Check if the user wants to include Education/Certifications
+    if (userResponses.confirmEducation) {
+      // Call promptEducation and pass portfolioData
+      return promptEducation(userResponses).then(educationData => ({
+        ...userResponses,
+        educationData
+      }));
+    }
+    return userResponses;
+  })
   // Prompt for project information
   .then(promptProject)
   // Generate the HTML page based on provided user data
