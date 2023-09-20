@@ -20,19 +20,19 @@ const promptUser = () => {
         }
       }
     },
-    {
-      type: 'input',
-      name: 'github',
-      message: 'Enter your GitHub username',
-      validate: nameInput => {
-        if (nameInput) {
-          return true;
-        } else {
-          console.log('Please enter your GitHub Username');
-          return false;
-        }
-      }
-    },
+    // {
+    //   type: 'input',
+    //   name: 'github',
+    //   message: 'Enter your GitHub username',
+    //   validate: nameInput => {
+    //     if (nameInput) {
+    //       return true;
+    //     } else {
+    //       console.log('Please enter your GitHub Username');
+    //       return false;
+    //     }
+    //   }
+    // },
     {
       type: 'confirm',
       name: 'confirmAbout',
@@ -137,6 +137,100 @@ const promptUser = () => {
     return userResponses;
   })
 };
+
+// Function to prompt users if they'd like to include social media links
+const promptSocialMedia = portfolioData => {
+  if (!portfolioData.socialMedia) {
+    portfolioData.socialMedia = [];
+  }
+
+    console.log(`
+    ==================
+    Social Media Links
+    ==================
+  `);
+
+  // GitHub, LinkedIn, YouTube and Facebook 
+  return inquirer.prompt([
+    {
+      type: 'confirm',
+      name: 'gitHubLink',
+      message: 'Would you like to include a GitHub link?',
+      default: true,
+      validate: ({ gitHubLink }) => {
+        if (gitHubLink) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name:'github',
+      message: 'Enter your GitHub username',
+      when: ({ gitHubLink }) => gitHubLink
+    },
+    {
+      type: 'confirm',
+      name: 'linkedInLink',
+      message: 'Would you like to include a LinkedIn link?',
+      default: true,
+      validate: ({ linkedInLink }) => {
+        if (linkedInLink) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name:'linkedInLink',
+      message: 'Enter your LinkedIn username',
+      when: ({ linkedInLink }) => linkedInLink
+    },
+    {
+      type: 'confirm',
+      name: 'youTubeLink',
+      message: 'Would you like to include a YouTube link?',
+      default: true,
+      validate: ({ youTubeLink }) => {
+        if (youTubeLink) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name:'youTubeLink',
+      message: 'Enter your YouTube username',
+      when: ({ youTubeLink }) => youTubeLink
+    },
+    {
+      type: 'confirm',
+      name: 'facebookLink',
+      message: 'Would you like to include a Facebook link?',
+      default: true,
+      validate: ({ facebookLink }) => {
+        if (facebookLink) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name:'facebookLinkb',
+      message: 'Enter your facebook username',
+      when: ({ facebookLink }) => facebookLink
+    },
+  ])
+}
+
 
 // Function to prompt user about Education and Certification achievements
 const promptEducation = portfolioData => {
