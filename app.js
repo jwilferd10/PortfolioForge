@@ -35,6 +35,19 @@ const promptUser = () => {
     // },
     {
       type: 'confirm',
+      name: 'confirmSocialMedia',
+      message: 'Would you like to include Social Media links?',
+      default: true,
+      validate: ({ confirmSocialMedia }) => {
+        if (confirmSocialMedia) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    },
+    {
+      type: 'confirm',
       name: 'confirmAbout',
       message: 'Would you like to enter some information about yourself for an "About" section?',
       default: true,
@@ -175,7 +188,7 @@ const promptSocialMedia = portfolioData => {
     },
     {
       type: 'input',
-      name:'linkedInLink',
+      name:'linkedIn',
       message: 'Enter your LinkedIn username',
       when: ({ linkedInLink }) => linkedInLink
     },
@@ -194,17 +207,17 @@ const promptSocialMedia = portfolioData => {
     },
     {
       type: 'input',
-      name:'youTubeLink',
+      name:'youTube',
       message: 'Enter your YouTube username',
       when: ({ youTubeLink }) => youTubeLink
     },
     {
       type: 'confirm',
-      name: 'facebookLink',
+      name: 'faceBookLink',
       message: 'Would you like to include a Facebook link?',
       default: true,
-      validate: ({ facebookLink }) => {
-        if (facebookLink) {
+      validate: ({ faceBookLink }) => {
+        if (faceBookLink) {
           return true;
         } else {
           return false;
@@ -213,9 +226,9 @@ const promptSocialMedia = portfolioData => {
     },
     {
       type: 'input',
-      name:'facebookLink',
+      name:'facebook',
       message: 'Enter your facebook username',
-      when: ({ facebookLink }) => facebookLink
+      when: ({ faceBookLink }) => faceBookLink
     },
   ]).then((socialMediaData) => {
     portfolioData.socialMedia.push(socialMediaData);
@@ -340,7 +353,15 @@ const promptProject = (portfolioData) => {
 clearDistDirectory();
 promptUser()
   .then(userResponses => {
-    // Check if the user wants to include Education/Certifications
+    // Check if the user is including Social Media links
+    if (userResponses.confirmSocialMedia) {
+      return promptSocialMedia(userResponses).then(socialMediaData => ({
+        ...userResponses,
+        socialMediaData
+      }))
+    }
+
+    // Check if the user is including Education/Certifications
     if (userResponses.confirmEducation) {
       // Call promptEducation and pass portfolioData
       return promptEducation(userResponses).then(educationData => ({
