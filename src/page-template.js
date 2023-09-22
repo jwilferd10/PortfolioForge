@@ -174,6 +174,37 @@ const generateEmojiHeader = emojiHeader => {
   return `${emojiHeader}`;
 };
 
+// Generate Social Media HTML
+const generataMediaHTML = socialMediaLink => {
+  const socialMediaArray = [
+    {
+      name: 'GitHub',
+      iconClass: 'fab fa-github fa-2x',
+      url: 'https://github.com/your-username'
+    },
+    {
+      name: 'LinkedIn',
+      iconClass: 'fab fa-linkedin fa-2x',
+      url: 'https://www.linkedin.com/in/your-username'
+    },
+    {
+      name: 'YouTube',
+      iconClass: 'fab fa-youtube fa-2x',
+      url: 'https://www.facebook.com/in/your-username'
+    },
+    {
+      name: 'FaceBook',
+      iconClass: 'fab fa-facebook fa-2x',
+      url: 'https://www.facebook.com/in/your-username'
+    }
+  ];
+  
+  return `
+
+  `;
+}
+
+
 // Export function to generate entire page
 export const generatePage = (templateData) => {
   // Destructure page data by section

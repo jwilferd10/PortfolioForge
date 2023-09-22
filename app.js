@@ -142,107 +142,162 @@ const promptUser = () => {
 
 // Function to prompt users if they'd like to include social media links
 const promptSocialMedia = portfolioData => {
-  if (!portfolioData.header) {
-    // Initialize header object if it doesn't exist
-    portfolioData.header = {};
-  }
-
-    console.log(`
+  console.log(`
     ==================
     Social Media Links
     ==================
   `);
 
-  // GitHub, LinkedIn, YouTube and Facebook 
-  return inquirer.prompt([
+  if (!portfolioData.header) {
+    // Initialize header object if it doesn't exist
+    portfolioData.header = {};
+  }
+
+  // Array to store social media links
+  const socialMediaLinks = [];
+
+  // Array of Social Media Platforms
+  const socialMediaPlatforms = [
     {
-      type: 'confirm',
-      name: 'gitHubLink',
-      message: 'Would you like to include a GitHub link?',
-      default: true,
-      validate: ({ gitHubLink }) => {
-        if (gitHubLink) {
-          return true;
-        } else {
-          return false;
-        }
-      }
+      name: 'GitHub',
+      key: 'githubLink',
     },
     {
-      type: 'input',
-      name:'github',
-      message: 'Enter your GitHub username',
-      when: ({ gitHubLink }) => gitHubLink
+      name: 'LinkedIn',
+      key: 'linkedInLink',
     },
     {
-      type: 'confirm',
-      name: 'linkedInLink',
-      message: 'Would you like to include a LinkedIn link?',
-      default: true,
-      validate: ({ linkedInLink }) => {
-        if (linkedInLink) {
-          return true;
-        } else {
-          return false;
-        }
-      }
+      name: 'YouTube',
+      key: 'youTubeLink',
     },
     {
-      type: 'input',
-      name:'linkedIn',
-      message: 'Enter your LinkedIn username',
-      when: ({ linkedInLink }) => linkedInLink
-    },
-    {
-      type: 'confirm',
-      name: 'youTubeLink',
-      message: 'Would you like to include a YouTube link?',
-      default: true,
-      validate: ({ youTubeLink }) => {
-        if (youTubeLink) {
-          return true;
-        } else {
-          return false;
-        }
-      }
-    },
-    {
-      type: 'input',
-      name:'youTube',
-      message: 'Enter your YouTube username',
-      when: ({ youTubeLink }) => youTubeLink
-    },
-    {
-      type: 'confirm',
-      name: 'faceBookLink',
-      message: 'Would you like to include a Facebook link?',
-      default: true,
-      validate: ({ faceBookLink }) => {
-        if (faceBookLink) {
-          return true;
-        } else {
-          return false;
-        }
-      }
-    },
-    {
-      type: 'input',
-      name:'facebook',
-      message: 'Enter your facebook username',
-      when: ({ faceBookLink }) => faceBookLink
-    },
-  ]).then((socialMediaData) => {
-    // Initialize social media data array if it doesn't exist
-    if (!portfolioData.header.socialMediaData) {
-      portfolioData.header.socialMediaData = [];
+      name: 'Facebook',
+      key: 'faceBookLink',
     }
-    
-    // Push new social media data into the array
-    portfolioData.header.socialMediaData.push(socialMediaData);
+  ]
+
+  // Prompt user for each social media link
+  return inquirer.prompt(socialMediaPlatforms.map(platform => ({
+    type: 'confirm',
+    name: platform.key,
+    message: `Would you like to include a ${platform.name} link?`,
+    default: true,
+  })))
+  .then(async answers => {
+    // Prompt for usernames and store them in the socialMediaLinks array. Start with For Each
+    for (const platform of socialMediaPlatforms) {
+      if (answers[platform.key]) {
+        const usernameAnswer = await inquirer.prompt({
+          type: 'input',
+          name: platform.key,
+          message: `Enter your ${platform.name} username`,
+        });
+        if (usernameAnswer[platform.key]) {
+          socialMediaLinks.push({
+            platform: platform.name,
+            username: usernameAnswer[platform.key],
+          });
+        }
+      }
+    }
+
+    // Store the social media links in portfolioData 
+    portfolioData.header.socialMediaData = socialMediaLinks;
 
     return portfolioData;
   });
-};
+}
+
+//   // GitHub, LinkedIn, YouTube and Facebook 
+//   return inquirer.prompt([
+//     {
+//       type: 'confirm',
+//       name: 'gitHubLink',
+//       message: 'Would you like to include a GitHub link?',
+//       default: true,
+//       validate: ({ gitHubLink }) => {
+//         if (gitHubLink) {
+//           return true;
+//         } else {
+//           return false;
+//         }
+//       }
+//     },
+//     {
+//       type: 'input',
+//       name:'github',
+//       message: 'Enter your GitHub username',
+//       when: ({ gitHubLink }) => gitHubLink
+//     },
+//     {
+//       type: 'confirm',
+//       name: 'linkedInLink',
+//       message: 'Would you like to include a LinkedIn link?',
+//       default: true,
+//       validate: ({ linkedInLink }) => {
+//         if (linkedInLink) {
+//           return true;
+//         } else {
+//           return false;
+//         }
+//       }
+//     },
+//     {
+//       type: 'input',
+//       name:'linkedIn',
+//       message: 'Enter your LinkedIn username',
+//       when: ({ linkedInLink }) => linkedInLink
+//     },
+//     {
+//       type: 'confirm',
+//       name: 'youTubeLink',
+//       message: 'Would you like to include a YouTube link?',
+//       default: true,
+//       validate: ({ youTubeLink }) => {
+//         if (youTubeLink) {
+//           return true;
+//         } else {
+//           return false;
+//         }
+//       }
+//     },
+//     {
+//       type: 'input',
+//       name:'youTube',
+//       message: 'Enter your YouTube username',
+//       when: ({ youTubeLink }) => youTubeLink
+//     },
+//     {
+//       type: 'confirm',
+//       name: 'faceBookLink',
+//       message: 'Would you like to include a Facebook link?',
+//       default: true,
+//       validate: ({ faceBookLink }) => {
+//         if (faceBookLink) {
+//           return true;
+//         } else {
+//           return false;
+//         }
+//       }
+//     },
+//     {
+//       type: 'input',
+//       name:'facebook',
+//       message: 'Enter your facebook username',
+//       when: ({ faceBookLink }) => faceBookLink
+//     },
+//   ]).then((socialMediaData) => {
+//     // Initialize social media data array if it doesn't exist
+//     if (!portfolioData.header.socialMediaData) {
+//       portfolioData.header.socialMediaData = [];
+//     }
+    
+//     // Push new social media data into the array
+//     portfolioData.header.socialMediaData.push(socialMediaData);
+
+//     return portfolioData;
+//   });
+// };
 
 // Function to prompt user about Education and Certification achievements
 const promptEducation = portfolioData => {
