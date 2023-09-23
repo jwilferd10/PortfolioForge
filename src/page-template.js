@@ -175,40 +175,27 @@ const generateEmojiHeader = emojiHeader => {
 };
 
 // Generate Social Media HTML
-const generataMediaHTML = socialMediaLink => {
-  const socialMediaArray = [
-    {
-      name: 'GitHub',
-      iconClass: 'fab fa-github fa-2x',
-      url: 'https://github.com/your-username'
-    },
-    {
-      name: 'LinkedIn',
-      iconClass: 'fab fa-linkedin fa-2x',
-      url: 'https://www.linkedin.com/in/your-username'
-    },
-    {
-      name: 'YouTube',
-      iconClass: 'fab fa-youtube fa-2x',
-      url: 'https://www.facebook.com/in/your-username'
-    },
-    {
-      name: 'FaceBook',
-      iconClass: 'fab fa-facebook fa-2x',
-      url: 'https://www.facebook.com/in/your-username'
-    }
-  ];
-  
-  return `
+const generataSocialMediaLinksHTML = (socialMediaData) => {
+  return socialMediaData.map(socialMediaLink => {
+    const platform = socialMediaLink.platform.toLowerCase();
+    const username = socialMediaLink.username;
 
-  `;
-}
+    // construct the URL based on thhe platform and username
+    const url = `https://${platform}.com/${username}`;
+    
+    return `
+      <a class="socialLinks ml-2 my-1 px-2 py-1 bg-secondary text-dark d-flex align-items-center" href="${url}">
+        <i class="socialIcon fab fa-${platform.toLowerCase()} fa-2x"></i>
+      </a>
+    `;
+  }).join('');
+};
 
 
 // Export function to generate entire page
 export const generatePage = (templateData) => {
   // Destructure page data by section
-  const { projects, about, skills, codingLanguages, education, colorTheme, confirmEmojis, ...header } = templateData;
+  const { projects, about, skills, codingLanguages, education, colorTheme, confirmEmojis, socialMediaLinks, ...header } = templateData;
 
   // Copy the selected CSS file to the /dist directory
   const selectedCSSFile = colorThemeMapping[colorTheme];
@@ -241,7 +228,7 @@ export const generatePage = (templateData) => {
           <h1 class="target1 page-title rounded-edges2 box-shadow2 spacing-five text-secondary bg-dark px-3">${header.name}</h1>
         </div>
         <nav class="container pb-4 flex-row justify-flex-start">
-          <a class="socialLinks gitHubLink ml-2 my-1 px-2 py-1 bg-secondary text-dark d-flex align-items-center" href="https://github.com/${header.github}"><i class="fab fa-github fa-2x"></i></a>
+          ${generataSocialMediaLinksHTML(socialMediaLinks)}
         </nav>
       </header>
 
