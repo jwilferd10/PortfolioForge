@@ -20,19 +20,6 @@ const promptUser = () => {
         }
       }
     },
-    // {
-    //   type: 'input',
-    //   name: 'github',
-    //   message: 'Enter your GitHub username',
-    //   validate: nameInput => {
-    //     if (nameInput) {
-    //       return true;
-    //     } else {
-    //       console.log('Please enter your GitHub Username');
-    //       return false;
-    //     }
-    //   }
-    // },
     {
       type: 'confirm',
       name: 'confirmSocialMedia',
