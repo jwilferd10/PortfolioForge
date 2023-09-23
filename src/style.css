@@ -1047,3 +1047,9 @@ nav a:hover {
     flex: 0 0 100%;
   }
 }
+
+@media screen and (max-width: 377px) {
+  .btn {
+    font-size: unset;
+  }
+}
