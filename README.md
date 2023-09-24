@@ -60,8 +60,10 @@ PortfolioForge allows you to generate a professional portfolio page for showcasi
 
 ### Prerequisites
 Before you begin, ensure that you have met the following requirements:
+- A Source-Code Editor
+  - VSCode, etc
 - Node.js
-PortfolioForge uses Node.js, make sure it's installed on your system. If not, you can download and install it from https://nodejs.org/en.
+  - PortfolioForge uses Node.js, make sure it's installed on your system. If not, you can download and install it from https://nodejs.org/en.
 
 ### Installation
 1. Clone this repository to your local machine using the following command:
@@ -95,7 +97,9 @@ To generate your portfolio, follow these steps:
 5. The page will be located within the `dist` folder as `index.html`. You can open that html file to view your portfolio
 
 ### Customization
-You can customize the appearance and styling of your portfolio page by editing the `style.css` file within the `dist` folder. Feel free to modify the CSS to match your personal preference.
+With PortfolioForge, your choices heavily influence how base template will turn out.
+
+Additionally you can customize the appearance and styling of your portfolio page by editing the `style.css` file within the `dist` folder. Feel free to modify the CSS to match your personal preference.
 
 ### Troubleshooting 
 If you encounter any issues, please open an issue on this repository 
