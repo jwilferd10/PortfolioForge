@@ -37,7 +37,7 @@ export const copyGenericCSSFile = () => {
 
 
 export const copySelectedCSSFile = (selectedCSSFile) => {
-    const sourcePath = `./src/${selectedCSSFile}`;
+    const sourcePath = `./src/cssThemes/${selectedCSSFile}`;
     const destinationPath = `./dist/${selectedCSSFile}`;
 
     return new Promise((resolve, reject) => {
