@@ -1,5 +1,8 @@
+// Importing inquirer
+import inquirer from 'inquirer';
+
 // Function to prompt users if they'd like to include social media links
-const promptSocialMedia = portfolioData => {
+export const promptSocialMedia = portfolioData => {
     console.log(`
       ==================
       Social Media Links

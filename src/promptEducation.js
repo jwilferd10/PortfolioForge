@@ -1,5 +1,8 @@
+// Importing inquirer
+import inquirer from 'inquirer';
+
 // Function to prompt user about Education and Certification achievements
-const promptEducation = portfolioData => {
+export const promptEducation = portfolioData => {
     if (!portfolioData.education) {
       portfolioData.education = [];
     }

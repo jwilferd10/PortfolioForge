@@ -1,5 +1,8 @@
+// Importing inquirer
+import inquirer from 'inquirer';
+
 // Function to prompt the user for project information
-const promptProject = (portfolioData) => {
+export const promptProject = (portfolioData) => {
     if (!portfolioData.projects) {
       portfolioData.projects = [];
     } 
