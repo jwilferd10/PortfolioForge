@@ -3,6 +3,10 @@ import inquirer from 'inquirer';
 import { writeFile, copyGenericCSSFile } from './utils/generate-site.js';
 import { generatePage } from './src/page-template.js';
 import { clearDistDirectory } from './utils/clearDistDirectory.js';
+import { promptEducation } from './src/promptEducation.js';
+import { promptProject } from './src/promptProject.js';
+import { promptSocialMedia } from './src/promptSocialMedia.js';
+import { promptUser } from './src/promptUser.js';
 
 clearDistDirectory();
 promptUser()
