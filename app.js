@@ -1,5 +1,3 @@
-import inquirer from 'inquirer';
-
 // utils imports
 import { writeFile, copyGenericCSSFile } from './utils/generate-site.js';
 import { clearDistDirectory } from './utils/clearDistDirectory.js';
