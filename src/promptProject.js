@@ -2,7 +2,7 @@
 import inquirer from 'inquirer';
 
 // Function to prompt the user for project information
-export const promptProject = (portfolioData) => {
+export const promptProject = async (portfolioData) => {
     if (!portfolioData.projects) {
       portfolioData.projects = [];
     } 
@@ -14,62 +14,64 @@ export const promptProject = (portfolioData) => {
     `);
   
     // Project Name, Descrpition, Structural Languages, Link, Feature
-    return inquirer.prompt([
+    const projectQuestions = [
       {
         type: 'input',
         name: 'name',
         message: 'What is the name of your project?',
-        validate: nameInput => {
-          if (nameInput) {
-            return true;
-          } else {
-            console.log("Please enter your project's name!");
-            return false;
-          }
-        }
+        validate: nameInput => nameInput ? true : "Please enter your project's name!",
       },
       {
         type: 'input',
         name: 'description',
-        message: 'Provide a description of the project (Required)'
+        message: 'Provide a description of the project (Required)',
+        validate: descriptionInput => descriptionInput ? true : 'Please provide a project description!',
       },
       {
         type: 'checkbox',
         name: 'languages',
         message: 'What did you build this project with? (Check all that apply)',
-        choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node'] 
+        choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node'], 
       },
       {
         type: 'input',
         name: 'link',
         message: 'Enter the GitHub link to your project. (Required)',
-        validate: linkInput => {
-          if (linkInput) {
-            return true;
-          } else {
-            console.log('You need to enter a GitHub link for your project!');
-            return false;
-          }
-        }
+        validate: linkInput => linkInput ? true : "You need to enter a GitHub link for your project!",
       },
       {
         type: 'confirm',
         name: 'feature',
         message: 'Would you like to feature this project?',
-        default: false
+        default: true,
       },
       {
         type: 'confirm',
         name: 'confirmAddProject',
         message: 'Would you like to enter another project?',
-        default: false
+        default: false,
       }
-    ]).then(projectData => {
+    ];
+
+    while (true) {
+      // projectData collects inquirer prompt data from projectQuestions.
+      const projectData = await inquirer.prompt(projectQuestions);
       portfolioData.projects.push(projectData);
-      if (projectData.confirmAddProject) {
-        return promptProject(portfolioData);
-      } else {
-        return portfolioData;
+
+      // If the user doesn't want to add another project, exit the loop.
+      if (!projectData.confirmAddProject) {
+        break;
       }
-    });
+    }
+
+    return portfolioData;
+    
+    // .then(projectData => {
+    //   portfolioData.projects.push(projectData);
+    //   if (projectData.confirmAddProject) {
+    //     return promptProject(portfolioData);
+    //   } else {
+    //     return portfolioData;
+    //   }
+    // });
 };
