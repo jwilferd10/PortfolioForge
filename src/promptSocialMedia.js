@@ -64,29 +64,4 @@ export const promptSocialMedia = async (portfolioData) => {
   }
 
   return portfolioData;
-
-
-  // .then(async answers => {
-  //   // Prompt for usernames and store them in the socialMediaLinks array. Start with For Each
-  //   for (const platform of socialMediaPlatforms) {
-  //     if (answers[platform.key]) {
-  //       const usernameAnswer = await inquirer.prompt({
-  //         type: 'input',
-  //         name: platform.key,
-  //         message: `Enter your ${platform.name} username`,
-  //       });
-  //       if (usernameAnswer[platform.key]) {
-  //         socialMediaLinks.push({
-  //           platform: platform.name,
-  //           username: usernameAnswer[platform.key],
-  //         });
-  //       }
-  //     }
-  //   }
-
-  //   // Store the social media links in portfolioData 
-  //   portfolioData.socialMediaLinks = socialMediaLinks;
-
-  //   return portfolioData;
-  // });
 };
