@@ -46,29 +46,4 @@ export const promptEducation = async (portfolioData) => {
   }
 
   return portfolioData;
-
-    // return inquirer.prompt([
-    //   {
-    //     type: 'input',
-    //     name: 'achievementName',
-    //     message: 'What name can you provide? (Required)',
-    //     validate: achievementNameInput => {
-    //       if (achievementNameInput) {
-    //         return true;
-    //       } else {
-    //         console.log('Please enter a name or title!');
-    //         return false;
-    //       }
-    //     }
-    //   },
-    //   {
-    //     type: 'input',
-    //     name: 'achievementDescription',
-    //     message: 'Provide a description of your achievements (Required)'
-    //   }, 
-    // ]).then((educationData) => {
-    //   portfolioData.education.push(educationData);
-    //   // Return the updated portfolioData
-    //   return portfolioData;
-    // });
 };
