@@ -3,6 +3,14 @@ import inquirer from 'inquirer';
 
 // Function to prompt the user for information they wish to include
 export const promptUser = () => {
+  console.log(`
+  ================================
+  Thanks for using PortfolioForge!
+  ================================
+  `);
+
+  console.log('Lets start with a few questions:');
+
   return inquirer.prompt([
     {
       type: 'input', 
