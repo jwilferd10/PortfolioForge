@@ -5,7 +5,9 @@
 
 :computer: **Github Repository**: https://github.com/jwilferd10/PortfolioForge
 
-:computer: **Live Example**: https://jwilferd10.github.io/PortfolioForge/
+:computer: **Live Standard Template Example**: https://jwilferd10.github.io/PortfolioForge/
+
+:computer: **Live Customized Example**: https://jwilferd10.github.io/Jonathan-Wilferd-PortfolioForge/
 
 ## :open_file_folder: Table of Contents:
   - [Preview](#camera-preview)
