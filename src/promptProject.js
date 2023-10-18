@@ -31,7 +31,7 @@ export const promptProject = async (portfolioData) => {
       type: 'checkbox',
       name: 'languages',
       message: 'What did you build this project with? (Check all that apply)',
-      choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node'], 
+      choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node.js', 'Python', 'Java', 'Ruby', 'C++', 'PHP', 'Swift', 'TypeScript', 'Go', 'Rust', 'Kotlin', 'SQL', 'Perl', 'C#', 'Dart', 'Scala', 'Haskell', 'Objective-C', 'Lua'],
     },
     {
       type: 'input',
