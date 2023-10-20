@@ -46,7 +46,7 @@ export const promptSocialMedia = async (portfolioData) => {
       const usernameAnswer = await inquirer.prompt({
         type: 'input',
         name: platform.key,
-        message: `Enter your ${platform.name} username`,
+        message: `Enter your ${platform.name} username:`,
       });
 
       if (usernameAnswer[platform.key]) {

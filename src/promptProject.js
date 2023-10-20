@@ -13,6 +13,8 @@ export const promptProject = async (portfolioData) => {
     =================
   `);
   
+  console.log('Showcasing your projects is an imperative for any field.')
+  
   // Project Name, Descrpition, Structural Languages, Link, Feature
   const projectQuestions = [
     {

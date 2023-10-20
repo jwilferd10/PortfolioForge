@@ -12,6 +12,8 @@ export const promptEducation = async (portfolioData) => {
     Enter Education and Certification Achievements
     ==============================================
   `);
+
+  console.log('Providing educational details can help showcase your knowledge over a subject.')
   
   // Name of Education and Certification, Description
   while (true) {
@@ -19,13 +21,13 @@ export const promptEducation = async (portfolioData) => {
       {
         type: 'input',
         name: 'achievementName',
-        message: 'What name can you provide? (Required)',
-        validate: achievementNameInput => achievementNameInput ? true : 'Please enter a name or title!',
+        message: 'Enter a name or title:',
+        validate: achievementNameInput => achievementNameInput ? true : 'Please provide a name or title!',
       },
       {
         type: 'input',
         name: 'achievementDescription',
-        message: 'Provide a description of your achievements (Required)',
+        message: 'Enter a description:',
         validate: achievementDescriptionInput => achievementDescriptionInput ? true : 'Please provide a description!',
       }
     ]);
