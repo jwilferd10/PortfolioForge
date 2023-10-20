@@ -184,6 +184,10 @@ const generateEmojiHeader = emojiHeader => {
 
 // Generate Social Media HTML
 const generataSocialMediaLinksHTML = (socialMediaData) => {
+  if (!socialMediaData || socialMediaData.length === 0) {
+    return '';
+  }
+
   return socialMediaData.map(socialMediaLink => {
     const platform = socialMediaLink.platform.toLowerCase();
     const username = socialMediaLink.username;
