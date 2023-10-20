@@ -18,6 +18,10 @@ const main = async () => {
     // Await for promptUser, the module's data will be userResponses
     const userResponses = await promptUser();
 
+    // Run confirmAbout if confirmed
+
+    // Run confirmSkills if confirmed
+
     // Run promptSocialMedia if confirmed
     if (userResponses.confirmSocialMedia) {
       await promptSocialMedia(userResponses);
