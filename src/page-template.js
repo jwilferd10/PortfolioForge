@@ -246,10 +246,10 @@ export const generatePage = (templateData) => {
 
       <main class="container my-5">
         ${generateAbout(about, confirmEmojis)}
-        ${generateSkillsPage(skills, confirmEmojis)}
-        ${generateLanguageSpread(codingLanguages, confirmEmojis)}
         ${generateAchievements(education, confirmEmojis)}
         ${generateProjects(projects, confirmEmojis)}
+        ${generateLanguageSpread(codingLanguages, confirmEmojis)}
+        ${generateSkillsPage(skills, confirmEmojis)}
       </main>
 
       <footer class="container text-center py-3">
