@@ -52,12 +52,6 @@ export const promptUser = () => {
       }
     },
     {
-      type: 'input',
-      name: 'about',
-      message: 'Provide some information about yourself:',
-      when: ({ confirmAbout }) => confirmAbout
-    },
-    {
       type: 'confirm',
       name: 'confirmSkills',
       message: 'Would you like to provide some information highlighting your skills?',
