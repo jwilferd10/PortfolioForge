@@ -65,12 +65,6 @@ export const promptUser = () => {
       }
     },
     {
-      type: 'input',
-      name: 'skills',
-      message: 'Provide some details about your skillset:',
-      when: ({ confirmSkills }) => confirmSkills
-    },
-    {
       type: 'confirm', 
       name: 'confirmLanguages',
       message: 'Would you like to highlight any programming languages?',

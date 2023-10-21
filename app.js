@@ -4,7 +4,8 @@ import { clearDistDirectory } from './utils/clearDistDirectory.js';
 
 // src imports
 import { generatePage } from './src/page-template.js';
-import { promptAbout } from'./src/promptAbout.js';
+import { promptAbout } from './src/promptAbout.js';
+import { promptSkills } from './src/promptSkills.js'
 import { promptEducation } from './src/promptEducation.js';
 import { promptProject } from './src/promptProject.js';
 import { promptSocialMedia } from './src/promptSocialMedia.js';
@@ -25,6 +26,9 @@ const main = async () => {
     }
 
     // Run confirmSkills if confirmed
+    if (userResponses.confirmSkills) {
+      await promptSkills(userResponses);
+    }
 
     // Run promptSocialMedia if confirmed
     if (userResponses.confirmSocialMedia) {
