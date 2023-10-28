@@ -15,7 +15,10 @@ export const promptAbout = async (portfolioData) => {
     =============================================
   `);
 
-    console.log("Start your portfolio strong with an 'About Me' section.")
+    console.log(`
+        Start your portfolio strong with an 'About Me' section.
+        -------------------------------------------------------
+    `);
 
     // While true, keep running the same round of questions
     while (true) {

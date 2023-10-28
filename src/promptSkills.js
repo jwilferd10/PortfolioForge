@@ -13,7 +13,10 @@ export const promptSkills = async (portfolioData) => {
     ========================
   `);
 
-  console.log("Tell people what you perform best at. Explain what your strong points are.");
+  console.log(`
+    Tell people what you perform best at. Explain what your strong points are.
+    --------------------------------------------------------------------------
+  `);
 
   // While true, keep running the same rounds of questions
 

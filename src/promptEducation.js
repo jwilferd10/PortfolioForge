@@ -13,7 +13,10 @@ export const promptEducation = async (portfolioData) => {
     ==============================================
   `);
 
-  console.log('Providing educational details can help showcase your knowledge over a subject.')
+  console.log(`
+    Providing educational details can help showcase your knowledge over a subject.
+    ------------------------------------------------------------------------------
+  `);
   
   // Name of Education and Certification, Description
   while (true) {
