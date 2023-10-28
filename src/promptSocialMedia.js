@@ -9,6 +9,11 @@ export const promptSocialMedia = async (portfolioData) => {
     ==================
   `);
 
+  console.log(`
+    Add Social Media links to your portfolio.
+    -----------------------------------------
+  `)
+
   if (!portfolioData.socialMediaLinks) {
     portfolioData.socialMediaLinks = [];
   }
