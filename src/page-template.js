@@ -242,9 +242,9 @@ export const generatePage = (templateData) => {
   
     <body>
       <header>
-        <div class="container flex-row justify-space-between align-center py-3">
+        <section class="container flex-row justify-space-between align-center py-3">
           <h1 class="target1 page-title rounded-edges2 box-shadow2 spacing-five text-secondary bg-dark px-3">${header.name}</h1>
-        </div>
+        </section>
         <nav class="container pb-4 flex-row justify-flex-start">
           ${generataSocialMediaLinksHTML(socialMediaLinks)}
         </nav>
@@ -259,7 +259,7 @@ export const generatePage = (templateData) => {
       </main>
 
       <footer class="container text-center py-3">
-        <h3 class="text-dark">&copy; ${new Date().getFullYear()} by ${header.name}</h3>
+        <h2 class="text-dark">&copy; ${new Date().getFullYear()} by ${header.name}</h2>
       </footer>
     </body>
     </html>
