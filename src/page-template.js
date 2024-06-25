@@ -101,10 +101,10 @@ const generateAchievements = (achievementArr, emojis) => {
 
   const featuredAchievements = achievementArr.map(({ achievementName, achievementDescription }) => {
     return `
-      <div class="col-12 mb-2 bg-dark text-light p-3 rounded-edges2 box-shadow2">
+      <article class="col-12 mb-2 bg-dark text-light p-3 rounded-edges2 box-shadow2">
         <h3 class="portfolio-item-title text-light">${achievementName}</h3>
-        <h5 class="portfolio-languages">${achievementDescription}</h5>
-      </div>
+        <h4 class="portfolio-languages">${achievementDescription}</h4>
+      </article>
     `;
   }).join(' ');
 
@@ -115,10 +115,12 @@ const generateAchievements = (achievementArr, emojis) => {
 
   return `
     <section class="my-3" id="achievements">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3 px-3 target1">${emojiHeader} Education & Achievements</h2>
-      <div class="flex-row justify-space-between">
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 mb-3 px-3 target1">
+        ${emojiHeader} Education & Achievements
+      </h2>
+      <section class="flex-row justify-space-between">
         ${featuredAchievements}
-      </div>
+      </section>
     </section>
   `;
 };
