@@ -83,7 +83,9 @@ const generateLanguageSpread = (languageSpread, emojis) => {
 
   return `
     <section class="my-3" id="programmingLanguages">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 px-3 mb-3">${emojiHeader} Programming Languages</h2>
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 px-3 mb-3">
+        ${emojiHeader} Programming Languages
+      </h2>
       <p>${languageSpread.join(', ')}</p>
     </section>
   `;
@@ -134,7 +136,9 @@ const generateProjects = (projectsArr, emojis) => {
   // In order: Featured and Non-Featured card templates
   return `
     <article class="my-3" id="portfolio">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 px-3 mb-3">${emojiHeader} Work</h2>
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 px-3 mb-3">
+        ${emojiHeader} Work
+      </h2>
       <section class="flex-row justify-space-between">
         ${projectsArr.filter(({ feature }) => feature).map(({ name, description, languages, link }) => {
           return `
