@@ -100,6 +100,7 @@ export const promptUser = () => {
         }
       }
     },
+    // Inquire if users would like to include a Contact/Reach Out section
     {
       type: 'confirm',
       name: 'confirmEmojis',
