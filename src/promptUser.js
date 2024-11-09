@@ -100,7 +100,19 @@ export const promptUser = () => {
         }
       }
     },
-    // Inquire if users would like to include a Contact/Reach Out section
+    {
+      type: 'confirm',
+      name: 'confirmContact',
+      message: 'Do you want to include a Contact / Reach Out section?',
+      default: true,
+      validate: ({ confirmContact }) => {
+        if (confirmContact) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    },
     {
       type: 'confirm',
       name: 'confirmEmojis',
