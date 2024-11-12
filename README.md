@@ -63,7 +63,6 @@ GIVEN a need for a Portfolio Generator
 - WHEN I have finished my prompts
   - THEN the portfolio is created
 
-So 
 ## :floppy_disk: Resources Used:
 - Node.js
 - NPM (Node Package Manager)
