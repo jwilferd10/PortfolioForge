@@ -51,8 +51,19 @@ As of right now the project is only accessible if you download the repository. I
 So much for your interest in PortfolioForge. My intention is that it proves helpful to you and sparks the idea that you can create a unique online portfolio, whether or not you choose to use PortfolioForge. Thanks again and happy coding!
 
 ## :book: User Story:
-Coming Soon!
+AS A DEVELOPER 
+I WANT an application that generates a baseline portfolio page 
+SO THAT I have a file I can modify
 
+GIVEN a need for a Portfolio Generator
+- WHEN I launch the application
+  - THEN I am introduced to the creation process
+- WHEN I select my desired content
+  - THEN I am prompted to enter necessary details
+- WHEN I have finished my prompts
+  - THEN the portfolio is created
+
+So 
 ## :floppy_disk: Resources Used:
 - Node.js
 - NPM (Node Package Manager)
