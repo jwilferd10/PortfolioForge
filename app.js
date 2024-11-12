@@ -5,6 +5,7 @@ import { clearDistDirectory } from './utils/clearDistDirectory.js';
 // src imports
 import { generatePage } from './src/page-template.js';
 import { promptAbout } from './src/promptAbout.js';
+import { promptContact } from './src/promptContact.js'
 import { promptSkills } from './src/promptSkills.js'
 import { promptEducation } from './src/promptEducation.js';
 import { promptProject } from './src/promptProject.js';
@@ -38,6 +39,10 @@ const main = async () => {
     // Run promptEducation if confirmed
     if (userResponses.confirmEducation) {
       await promptEducation(userResponses);
+    }
+
+    if (userResponses.confirmContact) {
+      await promptContact(userResponses);
     }
 
     // Run promptProject and colleect module's data as portfolio data, pass onto pageHTML
