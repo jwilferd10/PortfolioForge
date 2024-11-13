@@ -312,6 +312,7 @@ export const generatePage = (templateData) => {
         ${generateProjects(projects, confirmEmojis)}
         ${generateLanguageSpread(codingLanguages, confirmEmojis)}
         ${generateSkillsPage(skills, confirmEmojis)}
+        ${generateContact(contact)}
       </main>
 
       <footer class="container text-center py-3">
