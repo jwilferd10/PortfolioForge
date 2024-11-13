@@ -242,11 +242,34 @@ const generataSocialMediaLinksHTML = (socialMediaData) => {
   }).join('');
 };
 
+// Generate necessary html for the contact page
+const generateContact = (contactInfoArr) => {
+  if (!contactInfoArr || contactInfoArr.length === 0) {
+    return '';
+  }
+
+  const contactText = contactInfoArr.map(({ userContactText }) => {
+    return `
+      <p>${userContactText}</p>
+    `;
+  }).join(' ');
+
+  return `
+    <section class="my-3" id="contact">
+      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 px-3 mb-3">
+        Reach Out
+      </h2>
+      <section class="my-3 aboutText">
+        ${contactText}
+      </section>
+    </section>
+  `;
+};
 
 // Export function to generate entire page
 export const generatePage = (templateData) => {
   // Destructure page data by section
-  const { projects, about, skills, codingLanguages, education, colorTheme, confirmEmojis, socialMediaLinks, ...header } = templateData;
+  const { projects, about, skills, codingLanguages, education, colorTheme, confirmEmojis, socialMediaLinks, contact, ...header } = templateData;
 
   // Copy the selected CSS file to the /dist directory
   const selectedCSSFile = colorThemeMapping[colorTheme];
