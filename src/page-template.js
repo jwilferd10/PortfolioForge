@@ -248,9 +248,9 @@ const generateContact = (contactInfoArr) => {
     return '';
   }
 
-  const contactText = contactInfoArr.map(({ userContactText }) => {
+  const contactText = contactInfoArr.map(({ contactInfo }) => {
     return `
-      <p>${userContactText}</p>
+      <p>${contactInfo}</p>
     `;
   }).join(' ');
 
