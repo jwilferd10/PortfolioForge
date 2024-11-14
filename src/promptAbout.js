@@ -33,8 +33,6 @@ export const promptAbout = async (portfolioData) => {
 
         portfolioData.about.push(aboutData);
 
-        console.log(aboutData);
-        
         // Ask if users want to add another paragraph
         const addMoreContent = await inquirer.prompt({
             type: 'confirm',

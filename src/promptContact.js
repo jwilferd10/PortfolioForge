@@ -30,8 +30,6 @@ export const promptContact = async (portfolioData) => {
         ]);
 
         portfolioData.contact.push(contactData);
-
-        console.log(contactData);
         
         // Ask if users want to add another paragraph
         const addMoreContent = await inquirer.prompt({
