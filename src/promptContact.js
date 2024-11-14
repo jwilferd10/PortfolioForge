@@ -24,7 +24,7 @@ export const promptContact = async (portfolioData) => {
             {
                 type: 'input',
                 name: 'contactInfo',
-                message: 'Provide some contact details',
+                message: 'Provide contact information:',
                 validate: contactInput => contactInput ? true : 'Please provide some details for this section!',
             }
         ]);
