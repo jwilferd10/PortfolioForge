@@ -261,6 +261,16 @@ const generateContact = (contactInfoArr) => {
       </h2>
       <section class="my-3 aboutText">
         ${contactText}
+        
+        <form>
+          <label for="name">Name</label>
+          <input type="text" placeholder="Name" required/>
+          <label for="email">Email</label>
+          <input type="text" placeholder="Email" required/>
+          <label for="message">Message</label>
+          <input type="Message" placeholder="Message" required/>
+          <button>Submit</button>
+      </form>
       </section>
     </section>
   `;
