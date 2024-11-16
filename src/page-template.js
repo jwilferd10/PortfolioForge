@@ -262,14 +262,14 @@ const generateContact = (contactInfoArr) => {
       <section class="my-3 aboutText">
         ${contactText}
         
-        <form>
-          <label for="name">Name</label>
-          <input type="text" placeholder="Name" required/>
-          <label for="email">Email</label>
-          <input type="text" placeholder="Email" required/>
-          <label for="message">Message</label>
-          <input type="Message" placeholder="Message" required/>
-          <button>Submit</button>
+        <form class="container">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" placeholder="Name" class="form-input" required/>
+          <label for="email" class="form-label">Email</label>
+          <input type="text" placeholder="Email" class="form-input" required/>
+          <label for="message" class="form-label">Message</label>
+          <input type="Message" placeholder="Message" class="form-input" required/>
+          <button class="btn">Submit</button>
       </form>
       </section>
     </section>
