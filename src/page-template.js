@@ -260,7 +260,12 @@ const generateContact = (contactInfoArr) => {
         Reach Out
       </h2>
       <section class="my-3 aboutText">
-        ${contactText}
+        <section class="container text-center contact-list">
+          <h3>Contact Info</h3>
+          <ul class="flex-row justify-center" >
+            ${contactText}
+          </ul>
+        </section>
         
         <form class="container">
           <label for="name" class="form-label">Name</label>
