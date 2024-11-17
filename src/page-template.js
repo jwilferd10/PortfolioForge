@@ -262,7 +262,7 @@ const generateContact = (contactInfoArr) => {
       <section class="my-3 aboutText">
         <section class="container text-center contact-list">
           <h3>Contact Info</h3>
-          <ul class="flex-row justify-center" >
+          <ul class="flex-row justify-center pl-0" >
             ${contactText}
           </ul>
         </section>
