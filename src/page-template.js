@@ -250,7 +250,7 @@ const generateContact = (contactInfoArr) => {
 
   const contactText = contactInfoArr.map(({ contactInfo }) => {
     return `
-      <p>${contactInfo}</p>
+      <li class="mx-2">${contactInfo}</li>
     `;
   }).join(' ');
 
