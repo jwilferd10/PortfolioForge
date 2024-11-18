@@ -3,6 +3,7 @@ import { emojiMapping } from "./template-utils/emojiMapping.js";
 import { generateEmojiHeader } from "./template-utils/generateEmojiHeader.js";
 import { generateAbout } from './template-utils/generateAbout.js';
 import { generateSkillsPage } from './template-utils/generateSkillsPage.js';
+import { generateLanguageSpread } from './template-utils/generateLanguageSpread.js';
 
 // Mapping object for colorTheme
 const colorThemeMapping = {
@@ -16,26 +17,6 @@ const colorThemeMapping = {
   "Blue & Silver": "blue-silver.css",
   "Soft Pastel Delight": "soft-pastel.css",
   "Muted Earth Tones": "earth-tones.css"
-};
-
-// Programming Languages
-const generateLanguageSpread = (languageSpread, emojis) => {
-  // Return an empty string if there are no languages provided or the array is empty
-  if (!languageSpread || languageSpread.length === 0) {
-    return '';
-  }
-
-  const emojiType = emojis ? emojiMapping.database : '';
-  const emojiHeader = generateEmojiHeader(emojiType);
-
-  return `
-    <section class="my-3" id="programmingLanguages">
-      <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 px-3 mb-3">
-        ${emojiHeader} Programming Languages
-      </h2>
-      <p>${languageSpread.join(', ')}</p>
-    </section>
-  `;
 };
 
 // Generate HTML cards for user achievements
