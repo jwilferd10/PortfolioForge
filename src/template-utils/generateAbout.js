@@ -1,3 +1,5 @@
+import { emojiMapping } from "./emojiMapping.js";
+
 // User About Section
 const generateAbout = (aboutTextArr, emojis) => {
     if (!aboutTextArr || aboutTextArr.length === 0) {
