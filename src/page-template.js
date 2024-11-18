@@ -7,35 +7,7 @@ import { generateLanguageSpread } from './template-utils/generateLanguageSpread.
 import { generateAchievements } from './template-utils/generateAchievements.js';
 import { generateProjects } from './template-utils/generateProjects.js';
 import { generateContact } from './template-utils/generateContacts.js';
-
-// Mapping object for colorTheme
-const colorThemeMapping = {
-  "Default": "default.css",
-  "Deep Lavender & Charcoal": "deep-lavender.css",
-  "Dusk Pink & Slate Gray": "dusk-pink.css",
-  "Darker Pastel Plum & Teal": "darker-pastel.css",
-  "Gentle Peach & Lilac": "gentle-peach.css",
-  "Serenity": "serenity.css",
-  "Soothing Lavender & Mint": "lavender-mint.css",
-  "Blue & Silver": "blue-silver.css",
-  "Soft Pastel Delight": "soft-pastel.css",
-  "Muted Earth Tones": "earth-tones.css"
-};
-
-// Select style.css based off of user choice
-const selectColorTheme = cssFileName => {
-  if (!cssFileName || !colorThemeMapping[cssFileName]) {
-    // Use the default.css file
-    cssFileName = 'default.css';
-  }
-
-  const selectedColorTheme = colorThemeMapping[cssFileName];
-
-  // Otherwise, return HTML with appropriate data
-  return `
-    <link rel="stylesheet" href="${selectedColorTheme}">
-  `;
-};
+import { colorThemeMapping, selectColorTheme } from './template-utils/selectColorTheme.js';
 
 // Generate Social Media HTML
 const generataSocialMediaLinksHTML = (socialMediaData) => {
