@@ -18,67 +18,6 @@ const colorThemeMapping = {
   "Muted Earth Tones": "earth-tones.css"
 };
 
-// // Portfolio Emoji's
-// const emojiMapping = {
-//   comment: '<i class="fas fa-comment-dots"></i>',
-//   tools: '<i class="fas fa-tools"></i>',
-//   database: '<i class="fas fa-database"></i>',
-//   book: '<i class="fas fa-book"></i>',
-//   briefcase: '<i class="fas fa-briefcase"></i>',
-// };
-
-// // User About Section
-// const generateAbout = (aboutTextArr, emojis) => {
-//   if (!aboutTextArr || aboutTextArr.length === 0) {
-//     return '';
-//   }
-
-//   const emojiType = emojis ? emojiMapping.comment : '';
-//   const emojiHeader = generateEmojiHeader(emojiType);
-
-//   const aboutMeText = aboutTextArr.map(({ aboutText }) => {
-//     return `
-//       <p>${aboutText}</p>
-//     `;
-//   }).join(' ');
-
-//   return `
-//     <section class="my-3" id="about">
-//       <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 px-3 mb-3">
-//         ${emojiHeader} About Me
-//       </h2>
-//       <section class="my-3 aboutText">
-//         ${aboutMeText}
-//       </section>
-//     </section>
-//   `;
-// };
-
-// // User Skills Section
-// const generateSkillsPage = (skillsTextArr, emojis) => {
-//   if (!skillsTextArr || skillsTextArr.length === 0) {
-//     return '';
-//   }
-
-//   const emojiType = emojis ? emojiMapping.tools : '';
-//   const emojiHeader = generateEmojiHeader(emojiType);
-
-//   const skillsContent = skillsTextArr.map(({ skillsText }) => {
-//     return `
-//       <p>${skillsText}</p>
-//     `;
-//   }).join(' ');
-
-//   return `
-//     <section class="my-3" id="skills">
-//       <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 px-3 mb-3">
-//         ${emojiHeader} Skills
-//       </h2>
-//       <p>${skillsContent}</p>
-//     </section>
-//   `;
-// };
-
 // Programming Languages
 const generateLanguageSpread = (languageSpread, emojis) => {
   // Return an empty string if there are no languages provided or the array is empty
