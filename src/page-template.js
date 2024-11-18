@@ -1,6 +1,4 @@
 import { copySelectedCSSFile } from '../utils/generate-site.js';
-import { emojiMapping } from "./template-utils/emojiMapping.js";
-import { generateEmojiHeader } from "./template-utils/generateEmojiHeader.js";
 import { generateAbout } from './template-utils/generateAbout.js';
 import { generateSkillsPage } from './template-utils/generateSkillsPage.js';
 import { generateLanguageSpread } from './template-utils/generateLanguageSpread.js';
