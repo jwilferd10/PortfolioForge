@@ -213,14 +213,6 @@ const selectColorTheme = cssFileName => {
   `;
 };
 
-const generateEmojiHeader = emojiHeader => {
-  if (!emojiHeader) {
-    return '';
-  }
-
-  return `${emojiHeader}`;
-};
-
 // Generate Social Media HTML
 const generataSocialMediaLinksHTML = (socialMediaData) => {
   if (!socialMediaData || socialMediaData.length === 0) {
