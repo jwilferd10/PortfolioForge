@@ -1,7 +1,8 @@
 import { emojiMapping } from "./emojiMapping.js";
+import { generateEmojiHeader } from "./generateEmojiHeader.js";
 
 // User About Section
-const generateAbout = (aboutTextArr, emojis) => {
+export const generateAbout = (aboutTextArr, emojis) => {
     if (!aboutTextArr || aboutTextArr.length === 0) {
       return '';
     }
