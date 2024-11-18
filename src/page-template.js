@@ -14,14 +14,14 @@ const colorThemeMapping = {
   "Muted Earth Tones": "earth-tones.css"
 };
 
-// Portfolio Emoji's
-const emojiMapping = {
-  comment: '<i class="fas fa-comment-dots"></i>',
-  tools: '<i class="fas fa-tools"></i>',
-  database: '<i class="fas fa-database"></i>',
-  book: '<i class="fas fa-book"></i>',
-  briefcase: '<i class="fas fa-briefcase"></i>',
-};
+// // Portfolio Emoji's
+// const emojiMapping = {
+//   comment: '<i class="fas fa-comment-dots"></i>',
+//   tools: '<i class="fas fa-tools"></i>',
+//   database: '<i class="fas fa-database"></i>',
+//   book: '<i class="fas fa-book"></i>',
+//   briefcase: '<i class="fas fa-briefcase"></i>',
+// };
 
 // // User About Section
 // const generateAbout = (aboutTextArr, emojis) => {
