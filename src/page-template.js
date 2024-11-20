@@ -6,27 +6,7 @@ import { generateAchievements } from './template-utils/generateAchievements.js';
 import { generateProjects } from './template-utils/generateProjects.js';
 import { generateContact } from './template-utils/generateContacts.js';
 import { colorThemeMapping, selectColorTheme } from './template-utils/selectColorTheme.js';
-
-// Generate Social Media HTML
-const generataSocialMediaLinksHTML = (socialMediaData) => {
-  if (!socialMediaData || socialMediaData.length === 0) {
-    return '';
-  }
-
-  return socialMediaData.map(socialMediaLink => {
-    const platform = socialMediaLink.platform.toLowerCase();
-    const username = socialMediaLink.username;
-
-    // construct the URL based on thhe platform and username
-    const url = `https://${platform}.com/${username}`;
-    
-    return `
-      <a class="socialLinks ml-2 my-1 px-2 py-1 bg-secondary text-dark d-flex align-items-center" href="${url}">
-        <i class="socialIcon fab fa-${platform} fa-2x"></i>
-      </a>
-    `;
-  }).join('');
-};
+import { generataSocialMediaLinksHTML } from './template-utils/generateSocialMediaLinks.js';
 
 // Export function to generate entire page
 export const generatePage = (templateData) => {
