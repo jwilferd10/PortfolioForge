@@ -4,13 +4,13 @@ import { clearDistDirectory } from './utils/clearDistDirectory.js';
 
 // src imports
 import { generatePage } from './src/page-template.js';
-import { promptAbout } from './src/promptAbout.js';
-import { promptContact } from './src/promptContact.js'
-import { promptSkills } from './src/promptSkills.js'
-import { promptEducation } from './src/promptEducation.js';
-import { promptProject } from './src/promptProject.js';
-import { promptSocialMedia } from './src/promptSocialMedia.js';
-import { promptUser } from './src/promptUser.js';
+import { promptAbout } from './src/prompts/promptAbout.js';
+import { promptContact } from './src/prompts/promptContact.js'
+import { promptSkills } from './src/prompts/promptSkills.js'
+import { promptEducation } from './src/prompts/promptEducation.js';
+import { promptProject } from './src/prompts/promptProject.js';
+import { promptSocialMedia } from './src/prompts/promptSocialMedia.js';
+import { promptUser } from './src/prompts/promptUser.js';
 
 // Main execution of project
 const main = async () => {
