@@ -68,6 +68,19 @@ export const promptUser = () => {
       }
     },
     {
+      type: 'confirm',
+      name: 'confirmProjects',
+      message: 'Would you like to include any projects that you have worked on?',
+      default: true,
+      validate: ({ confirmProjects }) => {
+        if (confirmProjects) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    },
+    {
       type: 'confirm', 
       name: 'confirmLanguages',
       message: 'Would you like to highlight any programming languages?',
