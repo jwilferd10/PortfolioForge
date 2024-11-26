@@ -31,6 +31,11 @@ const main = async () => {
       await promptSkills(userResponses);
     }
 
+    // If true, prompt project questions
+    if (userResponses.confirmProjects) {
+      await promptProject(userResponses);
+    }
+
     // Run promptSocialMedia if confirmed
     if (userResponses.confirmSocialMedia) {
       await promptSocialMedia(userResponses);
@@ -45,9 +50,8 @@ const main = async () => {
       await promptContact(userResponses);
     }
 
-    // Run promptProject and colleect module's data as portfolio data, pass onto pageHTML
-    const portfolioData = await promptProject(userResponses);
-    const pageHTML = generatePage(portfolioData)
+    // Generate the HTML based off userResponses
+    const pageHTML = generatePage(userResponses)
 
     // Generate the appropriate files
     await writeFile(pageHTML);
