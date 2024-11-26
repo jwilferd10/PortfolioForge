@@ -14,8 +14,8 @@ export const promptProject = async (portfolioData) => {
   `);
   
   console.log(`
-    Showcasing your projects is an imperative for any field.
-    --------------------------------------------------------
+    Highlight projects you've worked on to showcase to others!
+    ----------------------------------------------------------
   `)
   
   // Project Name, Descrpition, Structural Languages, Link, Feature
