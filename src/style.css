@@ -84,10 +84,6 @@ nav a:hover {
   background-color: var(--dark);
 }
 
-.socialLinks {
-  border-radius: 50%;
-}
-
 .page-title {
   text-align: center;
   width: auto;
@@ -116,7 +112,6 @@ nav a:hover {
 
 .btn:hover {
   color: var(--dark);
-  background-color: var(--secondary);
 }
 
 .btn-inline {
