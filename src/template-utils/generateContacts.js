@@ -1,13 +1,18 @@
-// For now, no emoji has been inputted for this sections emoji header
 import { emojiMapping } from "./emojiMapping.js";
 import { generateEmojiHeader } from "./generateEmojiHeader.js";
 
 // Generate necessary html for the contact page
-export const generateContact = (contactInfoArr) => {
+export const generateContact = (contactInfoArr, emojis) => {
     if (!contactInfoArr || contactInfoArr.length === 0) {
       return '';
     }
   
+    const emojiType = emojis ? emojiMapping.mail : '';
+    const emojiHeader = generateEmojiHeader(emojiType);
+
+    console.log('emojiMapping:', emojiMapping);
+    console.log('emojiType:', emojiType);
+
     const contactText = contactInfoArr.map(({ contactInfo }) => {
       return `
         <li class="mx-2">${contactInfo}</li>
@@ -17,7 +22,7 @@ export const generateContact = (contactInfoArr) => {
     return `
       <section class="my-3" id="contact">
         <h2 class="text-dark bg-primary p-2 display-inline-block rounded-edges1 box-shadow1 px-3 mb-3">
-          Reach Out
+          ${emojiHeader} Reach Out
         </h2>
         <section class="my-3 aboutText">
           <section class="container text-center contact-list">

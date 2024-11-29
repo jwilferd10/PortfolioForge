@@ -5,5 +5,6 @@ export const emojiMapping = {
     database: '<i class="fas fa-database"></i>',
     book: '<i class="fas fa-book"></i>',
     briefcase: '<i class="fas fa-briefcase"></i>',
+    mail: '<i class="fas fa-envelope"></i>'
 };
   
