@@ -81,7 +81,6 @@ nav {
 
 nav a:hover {
   color: var(--secondary);
-  background-color: var(--dark);
 }
 
 .page-title {
@@ -112,6 +111,7 @@ nav a:hover {
 
 .btn:hover {
   color: var(--dark);
+  background-color: var(--secondary);
 }
 
 .btn-inline {
