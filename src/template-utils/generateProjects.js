@@ -2,7 +2,7 @@ import { emojiMapping } from "./emojiMapping.js";
 import { generateEmojiHeader } from "./generateEmojiHeader.js";
 
 // Generate the HTML containing project data
-export const generateProjects = (projectsArr, emojis) => {
+export const generateProjects = (projectsArr = [], emojis) => {
 
     const emojiType = emojis ? emojiMapping.briefcase : '';
     const emojiHeader = generateEmojiHeader(emojiType);
