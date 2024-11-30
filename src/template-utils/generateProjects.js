@@ -3,6 +3,9 @@ import { generateEmojiHeader } from "./generateEmojiHeader.js";
 
 // Generate the HTML containing project data
 export const generateProjects = (projectsArr = [], emojis) => {
+    if (!projectsArr || projectsArr.length === 0) {
+      return '';
+    }
 
     const emojiType = emojis ? emojiMapping.briefcase : '';
     const emojiHeader = generateEmojiHeader(emojiType);
