@@ -112,6 +112,7 @@ nav a:hover {
 .btn:hover {
   color: var(--dark);
   background-color: var(--secondary);
+  cursor: pointer;
 }
 
 .btn-inline {
