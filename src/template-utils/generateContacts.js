@@ -10,9 +10,6 @@ export const generateContact = (contactInfoArr, emojis) => {
   const emojiType = emojis ? emojiMapping.mail : '';
   const emojiHeader = generateEmojiHeader(emojiType);
 
-  console.log('emojiMapping:', emojiMapping);
-  console.log('emojiType:', emojiType);
-
   const contactText = contactInfoArr.map(({ contactInfo }) => {
     return `
       <li class="mx-2">${contactInfo}</li>
