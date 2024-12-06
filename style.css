@@ -67,7 +67,7 @@ a {
   text-decoration: none;
 }
 
-header {
+.portfolio-header {
   background-color: var(--primary);
   position: sticky;
   top: 0;
@@ -81,11 +81,6 @@ nav {
 
 nav a:hover {
   color: var(--secondary);
-  background-color: var(--dark);
-}
-
-.socialLinks {
-  border-radius: 50%;
 }
 
 .page-title {
@@ -117,6 +112,7 @@ nav a:hover {
 .btn:hover {
   color: var(--dark);
   background-color: var(--secondary);
+  cursor: pointer;
 }
 
 .btn-inline {
@@ -138,6 +134,10 @@ nav a:hover {
 
 .box-shadow2 {
   box-shadow: 0px 3px 2px black;
+}
+
+section ul li {
+  list-style: none;
 }
 
 /* CARDS */
