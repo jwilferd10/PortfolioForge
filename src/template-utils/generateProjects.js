@@ -20,7 +20,7 @@ export const generateProjects = (projectsArr = [], emojis) => {
         ${projectsArr.filter(({ feature }) => feature).map(({ name, description, languages, link }) => {
           return `
             <article class="col-12 mb-2 bg-dark text-light p-3 rounded-edges2 box-shadow2 target1">
-              <header class="text-center">
+              <header>
                 <h3 class="portfolio-item-title text-light">${name}</h3>
                 <h4 class="portfolio-languages">
                   Built With:
@@ -32,7 +32,7 @@ export const generateProjects = (projectsArr = [], emojis) => {
                 <p>${description}</p>
               </section>
 
-              <footer class="text-center"
+              <footer>
                 <a href="${link}" class="btn">
                   <i class="fab fa-github mr-2"></i>
                   View Project on GitHub
