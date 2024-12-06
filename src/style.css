@@ -67,7 +67,7 @@ a {
   text-decoration: none;
 }
 
-header {
+.portfolio-header {
   background-color: var(--primary);
   position: sticky;
   top: 0;

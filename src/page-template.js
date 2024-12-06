@@ -39,7 +39,7 @@ export const generatePage = (templateData) => {
     </head>
   
     <body>
-      <header>
+      <header class="portfolio-header">
         <section class="container flex-row justify-space-between align-center py-3">
           <h1 class="target1 page-title rounded-edges2 box-shadow2 spacing-five text-secondary bg-dark px-3">${header.name}</h1>
         </section>
