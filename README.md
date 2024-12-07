@@ -20,10 +20,8 @@
   - [Contact Information](#e-mail-contact-information)
 
 ## :camera: Preview:
-<p float="left">
-  <img src="public/assets/imgs/PortfolioForgeDesktop.jpg"/>
-  <img src="public/assets/imgs/PortfolioForgeMobile.jpg"/>
-</p>
+<img src="public/assets/imgs/PortfolioForgeDesktop.jpg" alt="PortfolioForge's desktop template" />
+<img src="public/assets/imgs/PortfolioForgeMobile.jpg" alt="PortfolioForge's mobile template" width="300"/>
 
 ## :wave: Description: 
 ### :globe_with_meridians: Your Digital Showcase
