@@ -20,7 +20,10 @@
   - [Contact Information](#e-mail-contact-information)
 
 ## :camera: Preview:
-Coming Soon!
+<p float="left">
+  <img src="public/assets/imgs/PortfolioForgeDesktop.jpg"/>
+  <img src="public/assets/imgs/PortfolioForgeMobile.jpg"/>
+</p>
 
 ## :wave: Description: 
 ### :globe_with_meridians: Your Digital Showcase
